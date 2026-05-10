@@ -7,7 +7,7 @@
     <title>Inscription - Location Maisons</title>
 
     
-    <link rel="stylesheet" href="${pageContext.request.contextPath}/assets/fontawesome/fontawesome-free-7.3.0-web/css/all.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
 
     <!-- Feuille de style (à créer plus tard) -->
     <link rel="stylesheet" href="${pageContext.request.contextPath}/assets/css/inscription-style.css">
