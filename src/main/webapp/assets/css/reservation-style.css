@@ -1,0 +1,707 @@
+/* ============================================ */
+/* STYLES DES PAGES DE RÉSERVATION              */
+/* Plateforme : Location Maisons                */
+/* Auteur : BARAKA                              */
+/* Version : 1.0                                */
+/* ============================================ */
+
+/* ============================================ */
+/* 1. BASE & CONTENEUR                          */
+/* ============================================ */
+.reservation-main {
+    min-height: calc(100vh - 68px - 60px);
+    background: #f1f5f9;
+    padding: 28px 0 40px;
+}
+
+.reservation-container {
+    max-width: 1000px;
+    margin: 0 auto;
+    padding: 0 28px;
+}
+
+/* ============================================ */
+/* 2. FIL D'ARIANE & EN-TÊTE                    */
+/* ============================================ */
+.fil-ariane {
+    margin-bottom: 20px;
+}
+
+.fil-ariane a {
+    display: inline-flex;
+    align-items: center;
+    gap: 6px;
+    font-size: 14px;
+    color: #64748b;
+    text-decoration: none;
+    font-weight: 500;
+    padding: 8px 14px;
+    border-radius: 8px;
+    transition: all 0.3s ease;
+}
+
+.fil-ariane a:hover {
+    color: #3b82f6;
+    background: #eff6ff;
+    text-decoration: none;
+}
+
+.reservation-entete {
+    margin-bottom: 24px;
+}
+
+.reservation-entete h1 {
+    font-size: 26px;
+    font-weight: 700;
+    color: #0f172a;
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    margin-bottom: 6px;
+}
+
+.reservation-entete h1 i {
+    color: #3b82f6;
+}
+
+.reservation-entete p {
+    font-size: 14px;
+    color: #64748b;
+    margin: 0;
+}
+
+/* ============================================ */
+/* 3. MESSAGE ERREUR                            */
+/* ============================================ */
+.message-erreur {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    background: #fef2f2;
+    border: 1px solid #fecaca;
+    border-left: 4px solid #ef4444;
+    color: #991b1b;
+    padding: 14px 18px;
+    border-radius: 12px;
+    font-size: 14px;
+    font-weight: 500;
+    margin-bottom: 24px;
+    animation: slideDown 0.3s ease;
+}
+
+.message-erreur i {
+    font-size: 18px;
+    color: #ef4444;
+}
+
+/* ============================================ */
+/* 4. CONTENU PRINCIPAL (2 COLONNES)            */
+/* ============================================ */
+.reservation-contenu {
+    display: grid;
+    grid-template-columns: 1fr 380px;
+    gap: 28px;
+    align-items: start;
+}
+
+/* ============================================ */
+/* 5. COLONNE GAUCHE - RÉCAPITULATIF            */
+/* ============================================ */
+.reservation-recap {
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+}
+
+.recap-section {
+    background: #ffffff;
+    border: 1px solid #e2e8f0;
+    border-radius: 16px;
+    padding: 24px 28px;
+    box-shadow: 0 1px 3px rgba(0,0,0,0.03);
+}
+
+.recap-section h3 {
+    font-size: 17px;
+    font-weight: 600;
+    color: #0f172a;
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    margin: 0 0 18px 0;
+    padding-bottom: 14px;
+    border-bottom: 1px solid #f1f5f9;
+}
+
+.recap-section h3 i {
+    color: #3b82f6;
+}
+
+/* Maison */
+.recap-maison {
+    display: flex;
+    gap: 18px;
+}
+
+.recap-maison-image {
+    width: 180px;
+    height: 130px;
+    border-radius: 12px;
+    overflow: hidden;
+    flex-shrink: 0;
+    background: #f1f5f9;
+}
+
+.recap-maison-image img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+.image-placeholder {
+    width: 100%;
+    height: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background: #e2e8f0;
+}
+
+.image-placeholder i {
+    font-size: 36px;
+    color: #94a3b8;
+}
+
+.recap-maison-infos {
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
+}
+
+.recap-maison-infos h2 {
+    font-size: 18px;
+    font-weight: 600;
+    color: #0f172a;
+    margin: 0;
+}
+
+.recap-adresse {
+    display: flex;
+    align-items: center;
+    gap: 6px;
+    font-size: 13.5px;
+    color: #64748b;
+}
+
+.recap-adresse i {
+    color: #3b82f6;
+    font-size: 13px;
+}
+
+.recap-carac {
+    display: flex;
+    gap: 16px;
+    font-size: 13px;
+    color: #64748b;
+    margin-top: 4px;
+}
+
+.recap-carac span {
+    display: flex;
+    align-items: center;
+    gap: 5px;
+}
+
+.recap-carac i {
+    font-size: 12px;
+    color: #94a3b8;
+}
+
+/* Détails */
+.recap-details {
+    display: flex;
+    flex-direction: column;
+    gap: 12px;
+}
+
+.recap-ligne {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 10px 0;
+    border-bottom: 1px solid #f8fafc;
+}
+
+.recap-ligne:last-child {
+    border-bottom: none;
+}
+
+.recap-label {
+    font-size: 14px;
+    color: #64748b;
+    font-weight: 400;
+}
+
+.recap-valeur {
+    font-size: 14.5px;
+    font-weight: 600;
+    color: #0f172a;
+}
+
+/* ============================================ */
+/* 6. COLONNE DROITE - PRIX                     */
+/* ============================================ */
+.reservation-prix-colonne {
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+    position: sticky;
+    top: 88px;
+}
+
+.carte-prix {
+    background: #ffffff;
+    border: 1px solid #e2e8f0;
+    border-radius: 16px;
+    padding: 24px;
+    box-shadow: 0 4px 12px rgba(0,0,0,0.06);
+}
+
+.carte-prix h3 {
+    font-size: 17px;
+    font-weight: 600;
+    color: #0f172a;
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    margin: 0 0 18px 0;
+    padding-bottom: 14px;
+    border-bottom: 1px solid #f1f5f9;
+}
+
+.carte-prix h3 i {
+    color: #3b82f6;
+}
+
+.prix-details {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+    margin-bottom: 18px;
+}
+
+.prix-ligne {
+    display: flex;
+    justify-content: space-between;
+    font-size: 14px;
+    color: #475569;
+}
+
+.gratuit {
+    color: #10b981;
+    font-weight: 500;
+}
+
+.prix-total {
+    display: flex;
+    justify-content: space-between;
+    padding-top: 14px;
+    margin-top: 6px;
+    border-top: 2px solid #e2e8f0;
+    font-size: 18px;
+    font-weight: 700;
+    color: #0f172a;
+}
+
+.total-valeur {
+    color: #3b82f6;
+    font-size: 22px;
+}
+
+/* Bouton confirmer */
+.formulaire-confirmation {
+    margin-bottom: 14px;
+}
+
+.bouton-confirmer-reservation {
+    width: 100%;
+    padding: 16px;
+    background: linear-gradient(135deg, #10b981, #059669);
+    color: #ffffff;
+    border: none;
+    border-radius: 12px;
+    font-size: 16px;
+    font-weight: 600;
+    cursor: pointer;
+    font-family: inherit;
+    box-shadow: 0 4px 14px rgba(16,185,129,0.3);
+    transition: all 0.3s ease;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 8px;
+}
+
+.bouton-confirmer-reservation:hover {
+    background: linear-gradient(135deg, #059669, #047857);
+    box-shadow: 0 6px 18px rgba(16,185,129,0.4);
+    transform: translateY(-1px);
+}
+
+.bouton-confirmer-reservation:active {
+    transform: translateY(0);
+}
+
+.bouton-confirmer-reservation:disabled {
+    opacity: 0.7;
+    cursor: not-allowed;
+    transform: none;
+}
+
+.info-paiement {
+    text-align: center;
+    font-size: 12.5px;
+    color: #94a3b8;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 6px;
+    margin: 0;
+}
+
+.info-paiement i {
+    font-size: 12px;
+}
+
+/* Conditions */
+.carte-conditions {
+    background: #f8fafc;
+    border: 1px solid #e2e8f0;
+    border-radius: 14px;
+    padding: 18px 20px;
+}
+
+.carte-conditions h4 {
+    font-size: 14px;
+    font-weight: 600;
+    color: #0f172a;
+    display: flex;
+    align-items: center;
+    gap: 6px;
+    margin: 0 0 10px 0;
+}
+
+.carte-conditions h4 i {
+    color: #3b82f6;
+}
+
+.carte-conditions ul {
+    margin: 0;
+    padding-left: 20px;
+}
+
+.carte-conditions li {
+    font-size: 13px;
+    color: #64748b;
+    margin-bottom: 6px;
+    line-height: 1.5;
+}
+
+/* ============================================ */
+/* 7. PAGE DE CONFIRMATION                      */
+/* ============================================ */
+.confirmation-carte {
+    max-width: 600px;
+    margin: 0 auto;
+    background: #ffffff;
+    border: 1px solid #e2e8f0;
+    border-radius: 20px;
+    padding: 50px 40px;
+    text-align: center;
+    box-shadow: 0 4px 16px rgba(0,0,0,0.06);
+}
+
+.confirmation-icone {
+    width: 90px;
+    height: 90px;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin: 0 auto 24px;
+    font-size: 42px;
+}
+
+.confirmation-icone.succes {
+    background: #f0fdf4;
+    color: #10b981;
+    box-shadow: 0 0 0 12px rgba(16,185,129,0.1);
+    animation: pulseSuccess 2s ease-out;
+}
+
+.confirmation-icone.erreur {
+    background: #fef2f2;
+    color: #ef4444;
+    box-shadow: 0 0 0 12px rgba(239,68,68,0.1);
+}
+
+.confirmation-carte h1 {
+    font-size: 26px;
+    font-weight: 700;
+    color: #0f172a;
+    margin: 0 0 12px 0;
+}
+
+.confirmation-message {
+    font-size: 15px;
+    color: #64748b;
+    max-width: 400px;
+    margin: 0 auto 30px;
+    line-height: 1.6;
+}
+
+/* Étapes */
+.confirmation-etapes {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 0;
+    margin-bottom: 32px;
+}
+
+.etape {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 8px;
+    font-size: 12px;
+    font-weight: 500;
+    color: #94a3b8;
+}
+
+.etape-active {
+    color: #10b981;
+}
+
+.etape-icone {
+    width: 36px;
+    height: 36px;
+    border-radius: 50%;
+    background: #f1f5f9;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 14px;
+    border: 2px solid #e2e8f0;
+}
+
+.etape-active .etape-icone {
+    background: #f0fdf4;
+    border-color: #10b981;
+}
+
+.etape-ligne {
+    width: 50px;
+    height: 2px;
+    background: #e2e8f0;
+    margin: 0 8px 20px;
+}
+
+/* Actions */
+.confirmation-actions {
+    display: flex;
+    gap: 12px;
+    justify-content: center;
+    flex-wrap: wrap;
+    margin-bottom: 30px;
+}
+
+.bouton-primaire {
+    display: inline-flex;
+    align-items: center;
+    gap: 8px;
+    padding: 13px 24px;
+    background: linear-gradient(135deg, #3b82f6, #2563eb);
+    color: #ffffff;
+    border: none;
+    border-radius: 10px;
+    font-size: 14px;
+    font-weight: 600;
+    cursor: pointer;
+    text-decoration: none;
+    font-family: inherit;
+    box-shadow: 0 4px 12px rgba(37,99,235,0.25);
+    transition: all 0.3s ease;
+}
+
+.bouton-primaire:hover {
+    transform: translateY(-1px);
+    box-shadow: 0 6px 16px rgba(37,99,235,0.35);
+    color: #ffffff;
+    text-decoration: none;
+}
+
+.bouton-secondaire {
+    display: inline-flex;
+    align-items: center;
+    gap: 8px;
+    padding: 13px 24px;
+    background: #ffffff;
+    color: #3b82f6;
+    border: 2px solid #3b82f6;
+    border-radius: 10px;
+    font-size: 14px;
+    font-weight: 600;
+    cursor: pointer;
+    text-decoration: none;
+    font-family: inherit;
+    transition: all 0.3s ease;
+}
+
+.bouton-secondaire:hover {
+    background: #eff6ff;
+    color: #1d4ed8;
+    text-decoration: none;
+}
+
+/* Infos */
+.confirmation-infos {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+    padding: 20px;
+    background: #f8fafc;
+    border-radius: 12px;
+    text-align: left;
+}
+
+.info-item {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    font-size: 13px;
+    color: #64748b;
+}
+
+.info-item i {
+    color: #3b82f6;
+    font-size: 14px;
+    flex-shrink: 0;
+    width: 20px;
+    text-align: center;
+}
+
+/* ============================================ */
+/* 8. ANIMATIONS                                */
+/* ============================================ */
+@keyframes slideDown {
+    from { opacity: 0; transform: translateY(-8px); }
+    to   { opacity: 1; transform: translateY(0); }
+}
+
+@keyframes pulseSuccess {
+    0%   { box-shadow: 0 0 0 0 rgba(16,185,129,0.4); }
+    50%  { box-shadow: 0 0 0 20px rgba(16,185,129,0); }
+    100% { box-shadow: 0 0 0 0 rgba(16,185,129,0); }
+}
+
+/* ============================================ */
+/* 9. FOOTER                                    */
+/* ============================================ */
+.dashboard-footer {
+    background: #ffffff;
+    border-top: 1px solid #e2e8f0;
+    padding: 18px 0;
+}
+
+.footer-contenu {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
+.footer-contenu p {
+    font-size: 13px;
+    color: #94a3b8;
+    margin: 0;
+}
+
+.footer-liens {
+    display: flex;
+    gap: 20px;
+}
+
+.footer-liens a {
+    font-size: 13px;
+    color: #64748b;
+    text-decoration: none;
+    transition: color 0.3s ease;
+}
+
+.footer-liens a:hover {
+    color: #3b82f6;
+}
+
+/* ============================================ */
+/* 10. RESPONSIVE                               */
+/* ============================================ */
+@media (max-width: 850px) {
+    .reservation-contenu {
+        grid-template-columns: 1fr;
+    }
+
+    .reservation-prix-colonne {
+        position: static;
+    }
+
+    .recap-maison {
+        flex-direction: column;
+    }
+
+    .recap-maison-image {
+        width: 100%;
+        height: 200px;
+    }
+
+    .confirmation-carte {
+        padding: 36px 24px;
+    }
+}
+
+@media (max-width: 500px) {
+    .reservation-container {
+        padding: 0 16px;
+    }
+
+    .recap-section {
+        padding: 18px 16px;
+    }
+
+    .carte-prix {
+        padding: 18px 16px;
+    }
+
+    .confirmation-carte {
+        padding: 28px 16px;
+    }
+
+    .confirmation-icone {
+        width: 70px;
+        height: 70px;
+        font-size: 32px;
+    }
+
+    .confirmation-carte h1 {
+        font-size: 22px;
+    }
+
+    .confirmation-actions {
+        flex-direction: column;
+    }
+
+    .bouton-primaire,
+    .bouton-secondaire {
+        justify-content: center;
+    }
+}

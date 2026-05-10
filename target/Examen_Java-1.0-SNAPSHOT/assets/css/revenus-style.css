@@ -1,0 +1,497 @@
+/* ============================================ */
+/* STYLES DE LA PAGE DES REVENUS                */
+/* Plateforme : Location Maisons                */
+/* Auteur : BARAKA                              */
+/* Version : 1.0                                */
+/* ============================================ */
+
+/* ============================================ */
+/* 1. EN-TÊTE                                   */
+/* ============================================ */
+body {
+    font-family: 'Poppins', 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif !important;
+}
+.revenus-entete {
+    background: #ffffff;
+    border: 1px solid #e2e8f0;
+    border-radius: 20px;
+    padding: 28px 32px;
+    margin-bottom: 24px;
+    box-shadow: 0 1px 3px rgba(0,0,0,0.04);
+}
+
+.revenus-entete h1 {
+    font-size: 24px;
+    font-weight: 700;
+    color: #0f172a;
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    margin-bottom: 6px;
+}
+
+.revenus-entete h1 i {
+    color: #10b981;
+    font-size: 22px;
+}
+
+.revenus-entete p {
+    font-size: 14px;
+    color: #64748b;
+    margin: 0;
+}
+
+/* ============================================ */
+/* 2. CARTES RÉSUMÉ                             */
+/* ============================================ */
+.revenus-resume {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 18px;
+    margin-bottom: 24px;
+}
+
+.resume-carte {
+    background: #ffffff;
+    border: 1px solid #e2e8f0;
+    border-radius: 16px;
+    padding: 22px 24px;
+    display: flex;
+    align-items: center;
+    gap: 18px;
+    box-shadow: 0 1px 3px rgba(0,0,0,0.04);
+    transition: all 0.3s ease;
+}
+
+.resume-carte:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 4px 12px rgba(0,0,0,0.08);
+}
+
+.resume-icone {
+    width: 52px;
+    height: 52px;
+    border-radius: 14px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-shrink: 0;
+}
+
+.resume-icone i {
+    font-size: 22px;
+    color: #ffffff;
+}
+
+.resume-total .resume-icone {
+    background: linear-gradient(135deg, #10b981, #059669);
+}
+
+.resume-mois .resume-icone {
+    background: linear-gradient(135deg, #3b82f6, #2563eb);
+}
+
+.resume-transactions .resume-icone {
+    background: linear-gradient(135deg, #8b5cf6, #6d28d9);
+}
+
+.resume-filtre .resume-icone {
+    background: linear-gradient(135deg, #f59e0b, #d97706);
+}
+
+.resume-infos {
+    display: flex;
+    flex-direction: column;
+}
+
+.resume-valeur {
+    font-size: 24px;
+    font-weight: 700;
+    color: #0f172a;
+    line-height: 1.2;
+}
+
+.resume-label {
+    font-size: 13px;
+    font-weight: 400;
+    color: #64748b;
+    margin-top: 2px;
+}
+
+/* ============================================ */
+/* 3. FILTRES                                   */
+/* ============================================ */
+.revenus-filtres {
+    margin-bottom: 24px;
+}
+
+.filtres-boutons {
+    display: flex;
+    gap: 8px;
+    flex-wrap: wrap;
+}
+
+.filtre-bouton {
+    display: inline-flex;
+    align-items: center;
+    gap: 7px;
+    padding: 10px 20px;
+    background: #ffffff;
+    border: 2px solid #e2e8f0;
+    border-radius: 12px;
+    font-size: 13.5px;
+    font-weight: 500;
+    color: #64748b;
+    text-decoration: none;
+    transition: all 0.3s ease;
+}
+
+.filtre-bouton:hover {
+    border-color: #93c5fd;
+    background: #f8faff;
+    color: #3b82f6;
+    text-decoration: none;
+}
+
+.filtre-actif {
+    background: #eff6ff;
+    border-color: #3b82f6;
+    color: #2563eb;
+    font-weight: 600;
+}
+
+.filtre-bouton i {
+    font-size: 13px;
+}
+
+/* ============================================ */
+/* 4. SECTION CONTENU                           */
+/* ============================================ */
+.revenus-section {
+    background: #ffffff;
+    border: 1px solid #e2e8f0;
+    border-radius: 16px;
+    padding: 24px;
+    margin-bottom: 24px;
+    box-shadow: 0 1px 3px rgba(0,0,0,0.03);
+}
+
+.section-entete {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    margin-bottom: 20px;
+}
+
+.section-entete h2 {
+    font-size: 17px;
+    font-weight: 600;
+    color: #0f172a;
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    margin: 0;
+}
+
+.section-entete h2 i {
+    color: #10b981;
+}
+
+.resultat-compteur {
+    font-size: 13px;
+    font-weight: 400;
+    color: #94a3b8;
+    margin-left: 6px;
+}
+
+/* ============================================ */
+/* 5. TABLEAU DES TRANSACTIONS                  */
+/* ============================================ */
+.tableau-container {
+    overflow-x: auto;
+    border-radius: 10px;
+    border: 1px solid #e2e8f0;
+}
+
+.tableau-revenus {
+    width: 100%;
+    border-collapse: collapse;
+    font-size: 14px;
+}
+
+.tableau-revenus thead {
+    background: #f8fafc;
+}
+
+.tableau-revenus th {
+    padding: 14px 16px;
+    text-align: left;
+    font-size: 12px;
+    font-weight: 600;
+    color: #64748b;
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
+    border-bottom: 2px solid #e2e8f0;
+    white-space: nowrap;
+}
+
+.tableau-revenus td {
+    padding: 16px;
+    border-bottom: 1px solid #f1f5f9;
+    color: #334155;
+    vertical-align: middle;
+}
+
+.tableau-revenus tbody tr {
+    transition: all 0.3s ease;
+}
+
+.tableau-revenus tbody tr:hover {
+    background: #f8fafc;
+}
+
+.tableau-revenus tbody tr:last-child td {
+    border-bottom: none;
+}
+
+.col-date .date-valeur {
+    font-size: 13px;
+    color: #64748b;
+    font-weight: 500;
+}
+
+.col-maison .maison-nom {
+    font-size: 14px;
+    font-weight: 600;
+    color: #0f172a;
+}
+
+.col-locataire span {
+    font-size: 13.5px;
+    font-weight: 500;
+    color: #334155;
+}
+
+.col-sejour span {
+    font-size: 13px;
+    color: #64748b;
+}
+
+.col-montant .montant-valeur {
+    font-size: 15px;
+    font-weight: 700;
+    color: #10b981;
+}
+
+/* Statuts dans le tableau */
+.statut-badge {
+    display: inline-block;
+    padding: 5px 12px;
+    border-radius: 20px;
+    font-size: 12px;
+    font-weight: 600;
+}
+
+.statut-REUSSI {
+    background: #f0fdf4;
+    color: #059669;
+}
+
+.statut-ECHOUE {
+    background: #fef2f2;
+    color: #dc2626;
+}
+
+.statut-REMBOURSE {
+    background: #fef9e7;
+    color: #d97706;
+}
+
+.statut-EN_COURS {
+    background: #eff6ff;
+    color: #2563eb;
+}
+
+.statut-INCONNU {
+    background: #f1f5f9;
+    color: #64748b;
+}
+
+/* ============================================ */
+/* 6. ÉTAT VIDE                                 */
+/* ============================================ */
+.etat-vide-revenus {
+    text-align: center;
+    padding: 40px 20px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 12px;
+}
+
+.etat-vide-revenus .vide-illustration {
+    width: 80px;
+    height: 80px;
+    border-radius: 50%;
+    background: #f1f5f9;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-bottom: 4px;
+}
+
+.etat-vide-revenus .vide-illustration i {
+    font-size: 36px;
+    color: #94a3b8;
+}
+
+.etat-vide-revenus h3 {
+    font-size: 18px;
+    font-weight: 600;
+    color: #0f172a;
+    margin: 0;
+}
+
+.etat-vide-revenus p {
+    font-size: 14px;
+    color: #64748b;
+    max-width: 400px;
+    margin: 0;
+}
+
+/* ============================================ */
+/* 7. REVENU PAR MAISON (BARRES)                */
+/* ============================================ */
+.revenu-maison-liste {
+    display: flex;
+    flex-direction: column;
+    gap: 18px;
+}
+
+.revenu-maison-item {
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
+}
+
+.maison-info {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
+.maison-titre {
+    font-size: 14.5px;
+    font-weight: 600;
+    color: #0f172a;
+}
+
+.maison-montant {
+    font-size: 15px;
+    font-weight: 700;
+    color: #10b981;
+}
+
+.maison-barre {
+    width: 100%;
+    height: 10px;
+    background: #f1f5f9;
+    border-radius: 5px;
+    overflow: hidden;
+}
+
+.barre-remplissage {
+    height: 100%;
+    background: linear-gradient(90deg, #10b981, #059669);
+    border-radius: 5px;
+    transition: width 1s ease;
+    display: flex;
+    align-items: center;
+    justify-content: flex-end;
+    padding-right: 8px;
+    min-width: fit-content;
+}
+
+.barre-pourcentage {
+    font-size: 10px;
+    font-weight: 700;
+    color: #ffffff;
+    white-space: nowrap;
+}
+
+/* ============================================ */
+/* 8. ANIMATIONS                                */
+/* ============================================ */
+@keyframes barreProgression {
+    from { width: 0%; }
+}
+
+.barre-remplissage {
+    animation: barreProgression 1.2s ease-out;
+}
+
+/* ============================================ */
+/* 9. RESPONSIVE DESIGN                         */
+/* ============================================ */
+@media (max-width: 1100px) {
+    .revenus-resume {
+        grid-template-columns: repeat(2, 1fr);
+    }
+}
+
+@media (max-width: 800px) {
+    .revenus-resume {
+        grid-template-columns: 1fr 1fr;
+        gap: 12px;
+    }
+
+    .resume-carte {
+        padding: 16px;
+    }
+
+    .resume-icone {
+        width: 40px;
+        height: 40px;
+        border-radius: 10px;
+    }
+
+    .resume-icone i {
+        font-size: 18px;
+    }
+
+    .resume-valeur {
+        font-size: 20px;
+    }
+
+    .tableau-revenus th,
+    .tableau-revenus td {
+        padding: 10px 12px;
+        font-size: 12px;
+    }
+
+    .col-sejour {
+        display: none;
+    }
+}
+
+@media (max-width: 550px) {
+    .revenus-resume {
+        grid-template-columns: 1fr;
+    }
+
+    .filtres-boutons {
+        flex-direction: column;
+    }
+
+    .filtre-bouton {
+        justify-content: center;
+    }
+
+    .col-locataire {
+        display: none;
+    }
+
+    .revenus-section {
+        padding: 16px;
+    }
+}

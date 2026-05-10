@@ -1,0 +1,661 @@
+/* ============================================ */
+/* STYLES DE LA FICHE DÉTAIL D'UNE MAISON       */
+/* Plateforme : Location Maisons                */
+/* Auteur : BARAKA                              */
+/* Version : 1.0                                */
+/* ============================================ */
+
+/* ============================================ */
+/* 1. BASE & CONTENEUR                          */
+/* ============================================ */
+.detail-main {
+    min-height: calc(100vh - 68px - 60px);
+    background: #f1f5f9;
+    padding: 28px 0 40px;
+}
+
+.detail-container {
+    max-width: 1100px;
+    margin: 0 auto;
+    padding: 0 28px;
+}
+
+/* ============================================ */
+/* 2. FIL D'ARIANE                              */
+/* ============================================ */
+.fil-ariane {
+    margin-bottom: 20px;
+}
+
+.fil-ariane a {
+    display: inline-flex;
+    align-items: center;
+    gap: 6px;
+    font-size: 14px;
+    color: #64748b;
+    text-decoration: none;
+    font-weight: 500;
+    padding: 8px 14px;
+    border-radius: 8px;
+    transition: all 0.3s ease;
+}
+
+.fil-ariane a:hover {
+    color: #3b82f6;
+    background: #eff6ff;
+    text-decoration: none;
+}
+
+/* ============================================ */
+/* 3. MESSAGE SUCCÈS                            */
+/* ============================================ */
+.message-succes {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    background: #f0fdf4;
+    border: 1px solid #bbf7d0;
+    border-left: 4px solid #10b981;
+    color: #065f46;
+    padding: 14px 18px;
+    border-radius: 12px;
+    font-size: 14px;
+    font-weight: 500;
+    margin-bottom: 20px;
+    animation: slideDown 0.3s ease;
+}
+
+.message-succes i {
+    font-size: 18px;
+    color: #10b981;
+}
+
+/* ============================================ */
+/* 4. GALERIE PHOTOS                            */
+/* ============================================ */
+.detail-galerie {
+    margin-bottom: 28px;
+}
+
+.galerie-principale {
+    width: 100%;
+    height: 420px;
+    border-radius: 16px;
+    overflow: hidden;
+    background: #e2e8f0;
+    margin-bottom: 12px;
+}
+
+.galerie-principale img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    transition: opacity 0.3s ease;
+}
+
+.image-placeholder-detail {
+    width: 100%;
+    height: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background: linear-gradient(135deg, #e2e8f0, #f1f5f9);
+}
+
+.image-placeholder-detail i {
+    font-size: 72px;
+    color: #94a3b8;
+}
+
+.galerie-miniatures {
+    display: flex;
+    gap: 10px;
+    flex-wrap: wrap;
+}
+
+.miniature {
+    width: 90px;
+    height: 70px;
+    border-radius: 10px;
+    overflow: hidden;
+    cursor: pointer;
+    border: 2px solid transparent;
+    transition: all 0.3s ease;
+    opacity: 0.7;
+    flex-shrink: 0;
+}
+
+.miniature:hover {
+    opacity: 0.9;
+    border-color: #93c5fd;
+}
+
+.miniature-active {
+    opacity: 1;
+    border-color: #3b82f6;
+    box-shadow: 0 0 0 3px rgba(59,130,246,0.2);
+}
+
+.miniature img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+.miniature-plus {
+    background: rgba(0,0,0,0.6);
+    color: #ffffff;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 16px;
+    font-weight: 700;
+    opacity: 1;
+}
+
+/* ============================================ */
+/* 5. CONTENU PRINCIPAL (2 COLONNES)            */
+/* ============================================ */
+.detail-contenu {
+    display: grid;
+    grid-template-columns: 1fr 380px;
+    gap: 28px;
+    align-items: start;
+}
+
+/* ============================================ */
+/* 6. COLONNE GAUCHE                            */
+/* ============================================ */
+.detail-colonne-gauche {
+    display: flex;
+    flex-direction: column;
+    gap: 24px;
+}
+
+.detail-section {
+    background: #ffffff;
+    border: 1px solid #e2e8f0;
+    border-radius: 16px;
+    padding: 24px 28px;
+    box-shadow: 0 1px 3px rgba(0,0,0,0.03);
+}
+
+.detail-section h1 {
+    font-size: 26px;
+    font-weight: 700;
+    color: #0f172a;
+    margin: 0 0 10px 0;
+    letter-spacing: -0.3px;
+}
+
+.detail-section h2 {
+    font-size: 18px;
+    font-weight: 600;
+    color: #0f172a;
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    margin: 0 0 16px 0;
+    padding-bottom: 12px;
+    border-bottom: 1px solid #f1f5f9;
+}
+
+.detail-section h2 i {
+    color: #3b82f6;
+    font-size: 18px;
+}
+
+.detail-adresse {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    font-size: 15px;
+    color: #64748b;
+    margin-top: 4px;
+}
+
+.detail-adresse i {
+    color: #3b82f6;
+    flex-shrink: 0;
+}
+
+/* Caractéristiques */
+.caracteristiques-grille {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 12px;
+}
+
+.carac-item-detail {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    padding: 14px 16px;
+    background: #f8fafc;
+    border-radius: 10px;
+    font-size: 14px;
+    color: #475569;
+}
+
+.carac-item-detail i {
+    font-size: 18px;
+    color: #3b82f6;
+    width: 22px;
+    text-align: center;
+}
+
+.carac-item-detail strong {
+    color: #0f172a;
+}
+
+/* Description */
+.detail-description {
+    font-size: 15px;
+    color: #475569;
+    line-height: 1.8;
+    margin: 0;
+}
+
+/* Équipements */
+.equipements-grille {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 10px;
+}
+
+.equipement-item-detail {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    padding: 10px 14px;
+    font-size: 14px;
+    color: #475569;
+}
+
+.equipement-item-detail i {
+    color: #10b981;
+    font-size: 14px;
+    flex-shrink: 0;
+}
+
+.aucun-equipement {
+    color: #94a3b8;
+    font-size: 14px;
+    font-style: italic;
+    margin: 0;
+}
+
+/* ============================================ */
+/* 7. COLONNE DROITE (RÉSERVATION)              */
+/* ============================================ */
+.detail-colonne-droite {
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+    position: sticky;
+    top: 88px;
+}
+
+.carte-reservation-detail {
+    background: #ffffff;
+    border: 1px solid #e2e8f0;
+    border-radius: 16px;
+    padding: 24px;
+    box-shadow: 0 4px 12px rgba(0,0,0,0.06);
+}
+
+.prix-section {
+    text-align: center;
+    margin-bottom: 20px;
+    padding-bottom: 20px;
+    border-bottom: 1px solid #f1f5f9;
+}
+
+.prix-valeur-detail {
+    font-size: 28px;
+    font-weight: 700;
+    color: #3b82f6;
+}
+
+.prix-periode-detail {
+    font-size: 14px;
+    color: #64748b;
+    font-weight: 400;
+}
+
+.formulaire-reservation-detail {
+    display: flex;
+    flex-direction: column;
+    gap: 14px;
+}
+
+.champ-reservation {
+    display: flex;
+    flex-direction: column;
+    gap: 5px;
+}
+
+.champ-reservation label {
+    font-size: 13px;
+    font-weight: 600;
+    color: #475569;
+    display: flex;
+    align-items: center;
+    gap: 6px;
+}
+
+.champ-reservation label i {
+    color: #94a3b8;
+    font-size: 12px;
+}
+
+.champ-reservation input,
+.champ-reservation select {
+    width: 100%;
+    padding: 13px 16px;
+    border: 2px solid #e2e8f0;
+    border-radius: 10px;
+    font-size: 14px;
+    font-family: 'Poppins', 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    color: #334155;
+    background: #f8fafc;
+    outline: none;
+    transition: all 0.3s ease;
+}
+
+.champ-reservation input:focus,
+.champ-reservation select:focus {
+    border-color: #3b82f6;
+    background: #ffffff;
+    box-shadow: 0 0 0 4px rgba(59,130,246,0.08);
+}
+
+.bouton-reserver {
+    width: 100%;
+    padding: 15px;
+    background: linear-gradient(135deg, #3b82f6, #2563eb);
+    color: #ffffff;
+    border: none;
+    border-radius: 10px;
+    font-size: 16px;
+    font-weight: 600;
+    cursor: pointer;
+    font-family: inherit;
+    box-shadow: 0 4px 12px rgba(37,99,235,0.25);
+    transition: all 0.3s ease;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 8px;
+    margin-top: 4px;
+}
+
+.bouton-reserver:hover {
+    background: linear-gradient(135deg, #2563eb, #1d4ed8);
+    box-shadow: 0 6px 16px rgba(37,99,235,0.35);
+    transform: translateY(-1px);
+}
+
+.bouton-reserver:active {
+    transform: translateY(0);
+}
+
+.actions-detail {
+    display: flex;
+    gap: 10px;
+    margin-top: 16px;
+    justify-content: center;
+}
+
+.bouton-favori-detail,
+.bouton-partager-detail {
+    width: 44px;
+    height: 44px;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border: 2px solid #e2e8f0;
+    background: #ffffff;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    font-size: 16px;
+    color: #64748b;
+    text-decoration: none;
+}
+
+.bouton-favori-detail:hover,
+.bouton-partager-detail:hover {
+    border-color: #3b82f6;
+    color: #3b82f6;
+    background: #eff6ff;
+}
+
+.favori-actif {
+    background: #fef2f2;
+    border-color: #ef4444;
+    color: #ef4444;
+}
+
+.favori-actif:hover {
+    background: #fee2e2;
+    border-color: #dc2626;
+    color: #dc2626;
+}
+
+/* Carte propriétaire */
+.carte-sidebar {
+    background: #ffffff;
+    border: 1px solid #e2e8f0;
+    border-radius: 16px;
+    padding: 20px 24px;
+    box-shadow: 0 1px 3px rgba(0,0,0,0.03);
+}
+
+.carte-sidebar h3 {
+    font-size: 16px;
+    font-weight: 600;
+    color: #0f172a;
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    margin: 0 0 12px 0;
+}
+
+.carte-sidebar h3 i {
+    color: #3b82f6;
+}
+
+.bouton-contacter-detail {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 8px;
+    width: 100%;
+    padding: 12px;
+    background: #ffffff;
+    color: #3b82f6;
+    border: 2px solid #3b82f6;
+    border-radius: 10px;
+    font-size: 14px;
+    font-weight: 600;
+    text-decoration: none;
+    margin-top: 14px;
+    transition: all 0.3s ease;
+}
+
+.bouton-contacter-detail:hover {
+    background: #eff6ff;
+    color: #1d4ed8;
+    text-decoration: none;
+}
+
+/* ============================================ */
+/* 8. ANIMATIONS                                */
+/* ============================================ */
+@keyframes slideDown {
+    from { opacity: 0; transform: translateY(-8px); }
+    to   { opacity: 1; transform: translateY(0); }
+}
+
+/* ============================================ */
+/* 9. RESPONSIVE                                */
+/* ============================================ */
+@media (max-width: 900px) {
+    .detail-contenu {
+        grid-template-columns: 1fr;
+    }
+
+    .detail-colonne-droite {
+        position: static;
+    }
+
+    .galerie-principale {
+        height: 300px;
+    }
+
+    .caracteristiques-grille {
+        grid-template-columns: 1fr 1fr;
+    }
+
+    .equipements-grille {
+        grid-template-columns: 1fr 1fr;
+    }
+}
+
+@media (max-width: 550px) {
+    .detail-container {
+        padding: 0 16px;
+    }
+
+    .detail-section {
+        padding: 18px 16px;
+    }
+
+    .detail-section h1 {
+        font-size: 22px;
+    }
+
+    .galerie-principale {
+        height: 240px;
+        border-radius: 12px;
+    }
+
+    .miniature {
+        width: 65px;
+        height: 55px;
+    }
+
+    .caracteristiques-grille,
+    .equipements-grille {
+        grid-template-columns: 1fr;
+    }
+
+    .carte-reservation-detail {
+        padding: 18px 16px;
+    }
+}
+
+
+
+
+
+
+/* ============================================ */
+/* AVIS SUR LA FICHE DÉTAIL                     */
+/* ============================================ */
+.avis-resume {
+    display: inline-flex;
+    align-items: center;
+    gap: 6px;
+    font-size: 14px;
+    font-weight: 400;
+    margin-left: 10px;
+}
+
+.avis-etoiles-resume {
+    color: #f59e0b;
+    font-size: 14px;
+}
+
+.avis-note-resume {
+    font-weight: 700;
+    color: #0f172a;
+}
+
+.avis-nombre {
+    color: #64748b;
+    font-weight: 400;
+}
+
+.avis-item {
+    padding: 18px 0;
+    border-bottom: 1px solid #f1f5f9;
+}
+
+.avis-item:last-child {
+    border-bottom: none;
+}
+
+.avis-item-entete {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    margin-bottom: 8px;
+    flex-wrap: wrap;
+    gap: 8px;
+}
+
+.avis-auteur {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+}
+
+.avis-avatar {
+    width: 36px;
+    height: 36px;
+    border-radius: 50%;
+    background: #eff6ff;
+    color: #3b82f6;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-weight: 700;
+    font-size: 14px;
+}
+
+.avis-item-note {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+}
+
+.avis-etoiles {
+    color: #f59e0b;
+}
+
+.avis-date {
+    font-size: 12px;
+    color: #94a3b8;
+}
+
+.avis-notes-detail {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 16px;
+    font-size: 12.5px;
+    color: #64748b;
+    margin-bottom: 8px;
+}
+
+.avis-notes-detail strong {
+    color: #0f172a;
+}
+
+.avis-commentaire {
+    font-size: 14px;
+    color: #475569;
+    line-height: 1.6;
+    margin: 0;
+}

@@ -1,0 +1,1191 @@
+/* ============================================ */
+/* STYLES DES PAGES MAISON (CRUD PROPRIÉTAIRE)  */
+/* Plateforme : Location Maisons                */
+/* Auteur : Baraka Ntwali                       */
+/* Version : 2.0                                */
+/* ============================================ */
+
+/* ============================================ */
+/* 1. BASE & POLICE                             */
+/* ============================================ */
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap');
+
+.maison-main {
+    min-height: calc(100vh - 68px - 60px);
+    background: #f1f5f9;
+    padding: 28px 0 40px;
+    font-family: 'Poppins', 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+
+.maison-container {
+    max-width: 900px;
+    margin: 0 auto;
+    padding: 0 28px;
+}
+
+/* ============================================ */
+/* 2. EN-TÊTE DE PAGE (MES MAISONS)            */
+/* ============================================ */
+.maison-entete {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 24px;
+    margin-bottom: 28px;
+    background: #ffffff;
+    padding: 28px 32px;
+    border-radius: 20px;
+    border: 1px solid #e2e8f0;
+    box-shadow: 0 1px 3px rgba(0,0,0,0.04);
+}
+
+.entete-gauche h1 {
+    font-size: 24px;
+    font-weight: 700;
+    color: #0f172a;
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    margin-bottom: 6px;
+    letter-spacing: -0.3px;
+    font-family: 'Poppins', 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+
+.entete-gauche h1 i {
+    color: #3b82f6;
+    font-size: 22px;
+}
+
+.entete-gauche p {
+    font-size: 14px;
+    color: #64748b;
+    margin: 0;
+    font-family: 'Poppins', 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+
+.entete-gauche p strong {
+    color: #3b82f6;
+    font-weight: 700;
+}
+
+.bouton-ajouter {
+    display: inline-flex;
+    align-items: center;
+    gap: 8px;
+    padding: 12px 24px;
+    background: linear-gradient(135deg, #3b82f6, #2563eb);
+    color: #ffffff;
+    text-decoration: none;
+    border-radius: 12px;
+    font-size: 14px;
+    font-weight: 600;
+    box-shadow: 0 4px 12px rgba(37,99,235,0.25);
+    transition: all 0.3s ease;
+    white-space: nowrap;
+    font-family: 'Poppins', 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+
+.bouton-ajouter:hover {
+    transform: translateY(-1px);
+    box-shadow: 0 6px 16px rgba(37,99,235,0.35);
+    color: #ffffff;
+    text-decoration: none;
+}
+
+/* ============================================ */
+/* 3. MESSAGES (SUCCÈS & ERREUR)               */
+/* ============================================ */
+.message-succes {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    background: #f0fdf4;
+    border: 1px solid #bbf7d0;
+    border-left: 4px solid #10b981;
+    color: #065f46;
+    padding: 14px 18px;
+    border-radius: 12px;
+    font-size: 14px;
+    font-weight: 500;
+    margin-bottom: 24px;
+    animation: slideDown 0.3s ease;
+    font-family: 'Poppins', 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+
+.message-succes i {
+    font-size: 18px;
+    color: #10b981;
+    flex-shrink: 0;
+}
+
+.message-erreur {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    background: #fef2f2;
+    border: 1px solid #fecaca;
+    border-left: 4px solid #ef4444;
+    color: #991b1b;
+    padding: 14px 18px;
+    border-radius: 12px;
+    font-size: 14px;
+    font-weight: 500;
+    margin-bottom: 24px;
+    animation: slideDown 0.3s ease;
+    font-family: 'Poppins', 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+
+.message-erreur i {
+    font-size: 18px;
+    color: #ef4444;
+    flex-shrink: 0;
+}
+
+/* ============================================ */
+/* 4. GRILLE DES ANNONCES                      */
+/* ============================================ */
+.grille-maisons {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(340px, 1fr));
+    gap: 20px;
+}
+
+.carte-maison {
+    background: #ffffff;
+    border-radius: 16px;
+    overflow: hidden;
+    border: 1px solid #e2e8f0;
+    box-shadow: 0 1px 3px rgba(0,0,0,0.04);
+    transition: all 0.3s ease;
+}
+
+.carte-maison:hover {
+    transform: translateY(-3px);
+    box-shadow: 0 8px 20px rgba(0,0,0,0.08);
+    border-color: #cbd5e1;
+}
+
+.carte-maison-image {
+    position: relative;
+    width: 100%;
+    height: 200px;
+    background: #f1f5f9;
+    overflow: hidden;
+}
+
+.carte-maison-image img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    transition: transform 0.4s ease;
+}
+
+.carte-maison:hover .carte-maison-image img {
+    transform: scale(1.05);
+}
+
+.image-placeholder {
+    width: 100%;
+    height: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background: linear-gradient(135deg, #e2e8f0, #f1f5f9);
+}
+
+.image-placeholder i {
+    font-size: 48px;
+    color: #94a3b8;
+}
+
+.badge-visibilite {
+    position: absolute;
+    top: 12px;
+    right: 12px;
+    display: inline-flex;
+    align-items: center;
+    gap: 5px;
+    padding: 6px 12px;
+    border-radius: 20px;
+    font-size: 12px;
+    font-weight: 600;
+    font-family: 'Poppins', 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    backdrop-filter: blur(8px);
+}
+
+.badge-visible {
+    background: rgba(16, 185, 129, 0.9);
+    color: #ffffff;
+}
+
+.badge-cache {
+    background: rgba(100, 116, 139, 0.9);
+    color: #ffffff;
+}
+
+.carte-maison-contenu {
+    padding: 18px 20px 20px;
+}
+
+.maison-titre {
+    font-size: 16px;
+    font-weight: 600;
+    color: #0f172a;
+    margin-bottom: 8px;
+    line-height: 1.4;
+    font-family: 'Poppins', 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    display: -webkit-box;
+    -webkit-line-clamp: 2;
+    -webkit-box-orient: vertical;
+    overflow: hidden;
+}
+
+.maison-adresse {
+    display: flex;
+    align-items: center;
+    gap: 6px;
+    font-size: 13px;
+    color: #64748b;
+    margin-bottom: 10px;
+    font-family: 'Poppins', 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+
+.maison-adresse i {
+    color: #3b82f6;
+    font-size: 13px;
+    flex-shrink: 0;
+}
+
+.maison-caracteristiques {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 12px;
+    margin-bottom: 12px;
+}
+
+.carac-item {
+    display: flex;
+    align-items: center;
+    gap: 5px;
+    font-size: 12.5px;
+    color: #64748b;
+    background: #f8fafc;
+    padding: 4px 10px;
+    border-radius: 8px;
+    font-family: 'Poppins', 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+
+.carac-item i {
+    color: #94a3b8;
+    font-size: 12px;
+}
+
+.maison-prix {
+    padding: 12px 0;
+    border-top: 1px solid #f1f5f9;
+    border-bottom: 1px solid #f1f5f9;
+    margin-bottom: 14px;
+}
+
+.prix-valeur {
+    font-size: 22px;
+    font-weight: 700;
+    color: #3b82f6;
+    font-family: 'Poppins', 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+
+.prix-periode {
+    font-size: 13px;
+    color: #64748b;
+    font-weight: 400;
+    margin-left: 2px;
+    font-family: 'Poppins', 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+
+.carte-maison-actions {
+    display: flex;
+    gap: 8px;
+    flex-wrap: wrap;
+}
+
+.bouton-action {
+    display: inline-flex;
+    align-items: center;
+    gap: 5px;
+    padding: 8px 14px;
+    border-radius: 8px;
+    font-size: 12.5px;
+    font-weight: 500;
+    text-decoration: none;
+    transition: all 0.3s ease;
+    border: 1px solid transparent;
+    font-family: 'Poppins', 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+
+.bouton-modifier {
+    background: #eff6ff;
+    color: #2563eb;
+    border-color: #bfdbfe;
+}
+
+.bouton-modifier:hover {
+    background: #dbeafe;
+    color: #1d4ed8;
+    text-decoration: none;
+}
+
+.bouton-reservations {
+    background: #f0fdf4;
+    color: #059669;
+    border-color: #bbf7d0;
+}
+
+.bouton-reservations:hover {
+    background: #dcfce7;
+    color: #047857;
+    text-decoration: none;
+}
+
+.bouton-desactiver {
+    background: #fef2f2;
+    color: #dc2626;
+    border-color: #fecaca;
+}
+
+.bouton-desactiver:hover {
+    background: #fee2e2;
+    color: #b91c1c;
+    text-decoration: none;
+}
+
+/* ============================================ */
+/* 5. ÉTAT VIDE (AUCUNE ANNONCE)               */
+/* ============================================ */
+.etat-vide-maison {
+    background: #ffffff;
+    border: 2px dashed #e2e8f0;
+    border-radius: 20px;
+    padding: 60px 40px;
+    text-align: center;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 16px;
+}
+
+.vide-illustration {
+    width: 100px;
+    height: 100px;
+    border-radius: 50%;
+    background: #f1f5f9;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-bottom: 8px;
+}
+
+.vide-illustration i {
+    font-size: 44px;
+    color: #94a3b8;
+}
+
+.etat-vide-maison h2 {
+    font-size: 22px;
+    font-weight: 700;
+    color: #0f172a;
+    margin: 0;
+    font-family: 'Poppins', 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+
+.etat-vide-maison > p {
+    font-size: 15px;
+    color: #64748b;
+    max-width: 450px;
+    margin: 0;
+    font-family: 'Poppins', 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+
+.vide-avantages {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+    margin: 8px 0 16px;
+    text-align: left;
+}
+
+.avantage-item {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    font-size: 14px;
+    color: #334155;
+    font-family: 'Poppins', 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+
+.avantage-item i {
+    color: #10b981;
+    font-size: 16px;
+    flex-shrink: 0;
+}
+
+.bouton-ajouter-grand {
+    display: inline-flex;
+    align-items: center;
+    gap: 10px;
+    padding: 16px 32px;
+    background: linear-gradient(135deg, #3b82f6, #2563eb);
+    color: #ffffff;
+    text-decoration: none;
+    border-radius: 14px;
+    font-size: 16px;
+    font-weight: 600;
+    box-shadow: 0 6px 20px rgba(37,99,235,0.3);
+    transition: all 0.3s ease;
+    font-family: 'Poppins', 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+
+.bouton-ajouter-grand:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 8px 24px rgba(37,99,235,0.4);
+    color: #ffffff;
+    text-decoration: none;
+}
+
+/* ============================================ */
+/* 6. FORMULAIRE (AJOUTER & MODIFIER)          */
+/* ============================================ */
+.formulaire-entete {
+    margin-bottom: 28px;
+}
+
+.retour-lien {
+    display: inline-flex;
+    align-items: center;
+    gap: 6px;
+    font-size: 14px;
+    color: #64748b;
+    text-decoration: none;
+    font-weight: 500;
+    margin-bottom: 14px;
+    font-family: 'Poppins', 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    transition: color 0.3s ease;
+}
+
+.retour-lien:hover {
+    color: #3b82f6;
+    text-decoration: none;
+}
+
+.formulaire-entete h1 {
+    font-size: 26px;
+    font-weight: 700;
+    color: #0f172a;
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    margin-bottom: 6px;
+    font-family: 'Poppins', 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+
+.formulaire-entete h1 i {
+    color: #3b82f6;
+}
+
+.formulaire-entete p {
+    font-size: 14px;
+    color: #64748b;
+    margin: 0;
+    font-family: 'Poppins', 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+
+.obligatoire {
+    color: #ef4444;
+    font-weight: 700;
+}
+
+.formulaire-maison {
+    display: flex;
+    flex-direction: column;
+    gap: 24px;
+}
+
+/* Sections */
+.formulaire-section {
+    background: #ffffff;
+    border: 1px solid #e2e8f0;
+    border-radius: 16px;
+    padding: 28px 32px;
+    box-shadow: 0 1px 3px rgba(0,0,0,0.03);
+    transition: box-shadow 0.3s ease;
+}
+
+.formulaire-section:hover {
+    box-shadow: 0 2px 8px rgba(0,0,0,0.06);
+}
+
+.section-titre {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    margin-bottom: 24px;
+    padding-bottom: 18px;
+    border-bottom: 2px solid #f1f5f9;
+    flex-wrap: wrap;
+}
+
+.section-titre i {
+    font-size: 22px;
+    color: #3b82f6;
+    width: 44px;
+    height: 44px;
+    background: #eff6ff;
+    border-radius: 12px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-shrink: 0;
+}
+
+.section-titre h2 {
+    font-size: 18px;
+    font-weight: 600;
+    color: #0f172a;
+    margin: 0;
+    font-family: 'Poppins', 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+
+.section-info {
+    font-size: 12.5px;
+    color: #94a3b8;
+    font-weight: 400;
+    margin-left: auto;
+    font-family: 'Poppins', 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+
+/* Champs */
+.champ-groupe {
+    margin-bottom: 20px;
+}
+
+.champ-groupe:last-child {
+    margin-bottom: 0;
+}
+
+.champ-groupe label {
+    display: block;
+    font-size: 14px;
+    font-weight: 600;
+    color: #334155;
+    margin-bottom: 8px;
+    font-family: 'Poppins', 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+
+.champ-groupe input,
+.champ-groupe textarea,
+.champ-groupe select {
+    width: 100%;
+    padding: 14px 18px;
+    border: 2px solid #e2e8f0;
+    border-radius: 12px;
+    font-size: 14.5px;
+    font-family: 'Poppins', 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    color: #1e293b;
+    background: #f8fafc;
+    transition: all 0.3s ease;
+    outline: none;
+}
+
+.champ-groupe input:focus,
+.champ-groupe textarea:focus {
+    border-color: #3b82f6;
+    background: #ffffff;
+    box-shadow: 0 0 0 4px rgba(59,130,246,0.08);
+}
+
+.champ-groupe input::placeholder,
+.champ-groupe textarea::placeholder {
+    color: #b0bec5;
+    font-weight: 400;
+}
+
+.champ-groupe textarea {
+    resize: vertical;
+    min-height: 100px;
+    line-height: 1.6;
+}
+
+.champ-ligne {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 20px;
+}
+
+.champ-icone-wrapper {
+    position: relative;
+    display: flex;
+    align-items: center;
+}
+
+.champ-icone-wrapper i {
+    position: absolute;
+    left: 16px;
+    color: #94a3b8;
+    font-size: 15px;
+    pointer-events: none;
+    z-index: 1;
+    transition: color 0.3s ease;
+}
+
+.champ-icone-wrapper input:focus + i,
+.champ-icone-wrapper:focus-within i {
+    color: #3b82f6;
+}
+
+.champ-icone-wrapper input {
+    padding-left: 44px;
+}
+
+/* ============================================ */
+/* 7. ÉQUIPEMENTS                              */
+/* ============================================ */
+.grille-equipements {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
+    gap: 12px;
+}
+
+.equipement-item {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    padding: 14px 18px;
+    border: 2px solid #e2e8f0;
+    border-radius: 12px;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    font-size: 14px;
+    font-weight: 500;
+    color: #475569;
+    background: #f8fafc;
+    user-select: none;
+    font-family: 'Poppins', 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+
+.equipement-item:hover {
+    border-color: #93c5fd;
+    background: #f8faff;
+}
+
+.equipement-item input[type="checkbox"] {
+    width: 18px;
+    height: 18px;
+    accent-color: #3b82f6;
+    cursor: pointer;
+    margin: 0;
+    flex-shrink: 0;
+}
+
+.equipement-item:has(input:checked) {
+    border-color: #3b82f6;
+    background: #eff6ff;
+    color: #1d4ed8;
+}
+
+.equipement-item i {
+    font-size: 16px;
+    width: 22px;
+    text-align: center;
+    color: #64748b;
+    transition: color 0.3s ease;
+}
+
+.equipement-item:has(input:checked) i {
+    color: #3b82f6;
+}
+
+/* ============================================ */
+/* 8. ZONE UPLOAD PHOTOS                       */
+/* ============================================ */
+.zone-upload {
+    margin-bottom: 16px;
+}
+
+.input-file {
+    display: none;
+}
+
+.upload-label {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    gap: 12px;
+    padding: 40px 20px;
+    border: 2px dashed #cbd5e1;
+    border-radius: 14px;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    background: #f8fafc;
+    text-align: center;
+}
+
+.upload-label:hover {
+    border-color: #3b82f6;
+    background: #eff6ff;
+}
+
+.upload-label i {
+    font-size: 44px;
+    color: #94a3b8;
+    transition: color 0.3s ease;
+}
+
+.upload-label:hover i {
+    color: #3b82f6;
+}
+
+.upload-texte {
+    font-size: 15px;
+    font-weight: 600;
+    color: #475569;
+    font-family: 'Poppins', 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+
+.upload-info {
+    font-size: 12.5px;
+    color: #94a3b8;
+    font-weight: 400;
+    font-family: 'Poppins', 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+
+/* Preview photos */
+.preview-photos {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(170px, 1fr));
+    gap: 16px;
+    margin-top: 16px;
+}
+
+.preview-item {
+    position: relative;
+    border-radius: 12px;
+    overflow: hidden;
+    border: 2px solid #e2e8f0;
+    background: #ffffff;
+    transition: all 0.3s ease;
+}
+
+.preview-item:hover {
+    border-color: #3b82f6;
+    box-shadow: 0 4px 12px rgba(0,0,0,0.08);
+}
+
+.preview-item img {
+    width: 100%;
+    height: 150px;
+    object-fit: cover;
+    display: block;
+}
+
+.preview-infos {
+    padding: 8px 10px;
+}
+
+.preview-nom {
+    display: block;
+    font-size: 11px;
+    color: #64748b;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+    font-family: 'Poppins', 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+
+.preview-taille {
+    display: block;
+    font-size: 10px;
+    color: #94a3b8;
+    font-family: 'Poppins', 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+
+.preview-badge {
+    position: absolute;
+    top: 8px;
+    left: 8px;
+    background: rgba(59, 130, 246, 0.9);
+    color: #ffffff;
+    font-size: 10px;
+    font-weight: 600;
+    padding: 4px 9px;
+    border-radius: 10px;
+    font-family: 'Poppins', 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+
+.preview-supprimer {
+    position: absolute;
+    top: 8px;
+    right: 8px;
+    width: 28px;
+    height: 28px;
+    border-radius: 50%;
+    background: rgba(239, 68, 68, 0.85);
+    color: #ffffff;
+    border: none;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 14px;
+    transition: all 0.3s ease;
+    z-index: 5;
+    padding: 0;
+    line-height: 1;
+}
+
+.preview-supprimer:hover {
+    background: #dc2626;
+    transform: scale(1.1);
+}
+
+/* Compteur photos */
+.compteur-photos {
+    text-align: center;
+    font-size: 13px;
+    color: #64748b;
+    margin-top: 14px;
+    padding: 10px;
+    background: #f8fafc;
+    border-radius: 10px;
+    transition: all 0.3s ease;
+    font-family: 'Poppins', 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+
+/* Photos existantes (modifier) */
+.photos-existantes {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(190px, 1fr));
+    gap: 18px;
+}
+
+.photo-existante {
+    position: relative;
+    border-radius: 12px;
+    overflow: hidden;
+    border: 2px solid #e2e8f0;
+    background: #ffffff;
+    transition: all 0.3s ease;
+}
+
+.photo-existante img {
+    width: 100%;
+    height: 170px;
+    object-fit: cover;
+    display: block;
+}
+
+.photo-actions {
+    padding: 12px 14px;
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
+}
+
+.photo-radio-label,
+.photo-supprimer-label {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    font-size: 12.5px;
+    cursor: pointer;
+    color: #64748b;
+    font-family: 'Poppins', 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+
+.photo-radio-label input,
+.photo-supprimer-label input {
+    margin: 0;
+    accent-color: #3b82f6;
+}
+
+.photo-radio-label span i {
+    color: #f59e0b;
+}
+
+.photo-supprimer-label span i {
+    color: #ef4444;
+}
+
+.photo-supprimer-btn {
+    display: flex;
+    align-items: center;
+    gap: 6px;
+    background: #fef2f2;
+    color: #dc2626;
+    border: 1px solid #fecaca;
+    border-radius: 8px;
+    padding: 8px 14px;
+    font-size: 12.5px;
+    font-weight: 600;
+    cursor: pointer;
+    font-family: 'Poppins', 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    transition: all 0.3s ease;
+}
+
+.photo-supprimer-btn:hover {
+    background: #fee2e2;
+    border-color: #ef4444;
+}
+
+.aucune-photo {
+    text-align: center;
+    color: #94a3b8;
+    font-size: 14px;
+    padding: 24px;
+    background: #f8fafc;
+    border-radius: 12px;
+    font-family: 'Poppins', 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+
+/* ============================================ */
+/* 9. BOUTONS DU FORMULAIRE                    */
+/* ============================================ */
+.formulaire-actions {
+    display: flex;
+    justify-content: flex-end;
+    gap: 14px;
+    padding-top: 8px;
+}
+
+.bouton-annuler {
+    display: inline-flex;
+    align-items: center;
+    gap: 8px;
+    padding: 14px 26px;
+    background: #ffffff;
+    color: #64748b;
+    border: 2px solid #e2e8f0;
+    border-radius: 12px;
+    font-size: 14px;
+    font-weight: 600;
+    text-decoration: none;
+    font-family: 'Poppins', 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    transition: all 0.3s ease;
+}
+
+.bouton-annuler:hover {
+    background: #f8fafc;
+    border-color: #cbd5e1;
+    color: #475569;
+    text-decoration: none;
+}
+
+.bouton-publier {
+    display: inline-flex;
+    align-items: center;
+    gap: 8px;
+    padding: 14px 30px;
+    background: linear-gradient(135deg, #3b82f6, #2563eb);
+    color: #ffffff;
+    border: none;
+    border-radius: 12px;
+    font-size: 14px;
+    font-weight: 600;
+    cursor: pointer;
+    font-family: 'Poppins', 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    box-shadow: 0 4px 14px rgba(37,99,235,0.3);
+    transition: all 0.3s ease;
+}
+
+.bouton-publier:hover {
+    background: linear-gradient(135deg, #2563eb, #1d4ed8);
+    box-shadow: 0 6px 18px rgba(37,99,235,0.4);
+    transform: translateY(-1px);
+}
+
+.bouton-publier:active {
+    transform: translateY(0);
+}
+
+.bouton-publier:disabled {
+    opacity: 0.7;
+    cursor: not-allowed;
+    transform: none;
+}
+
+/* ============================================ */
+/* 10. ONGLETS DE FILTRE                        */
+/* ============================================ */
+.maison-filtres {
+    display: flex;
+    gap: 10px;
+    margin-bottom: 24px;
+    flex-wrap: wrap;
+}
+
+.filtre-onglet {
+    display: inline-flex;
+    align-items: center;
+    gap: 8px;
+    padding: 12px 22px;
+    background: #ffffff;
+    border: 2px solid #e2e8f0;
+    border-radius: 12px;
+    font-size: 14px;
+    font-weight: 500;
+    color: #64748b;
+    text-decoration: none;
+    transition: all 0.3s ease;
+    font-family: 'Poppins', 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+
+.filtre-onglet i {
+    font-size: 14px;
+    transition: transform 0.3s ease;
+}
+
+.filtre-onglet:hover {
+    border-color: #93c5fd;
+    background: #f8faff;
+    color: #3b82f6;
+    text-decoration: none;
+    transform: translateY(-1px);
+    box-shadow: 0 4px 12px rgba(59,130,246,0.08);
+}
+
+.filtre-onglet:hover i {
+    transform: scale(1.1);
+}
+
+.filtre-onglet.filtre-actif {
+    background: #eff6ff;
+    border-color: #3b82f6;
+    color: #2563eb;
+    font-weight: 600;
+    box-shadow: 0 2px 8px rgba(59,130,246,0.12);
+}
+
+.filtre-onglet.filtre-actif i {
+    color: #2563eb;
+}
+
+/* ============================================ */
+/* 11. FOOTER                                   */
+/* ============================================ */
+.dashboard-footer {
+    background: #ffffff;
+    border-top: 1px solid #e2e8f0;
+    padding: 18px 0;
+}
+
+.footer-contenu {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
+.footer-contenu p {
+    font-size: 13px;
+    color: #94a3b8;
+    margin: 0;
+    font-family: 'Poppins', 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+
+.footer-liens {
+    display: flex;
+    gap: 20px;
+}
+
+.footer-liens a {
+    font-size: 13px;
+    color: #64748b;
+    text-decoration: none;
+    transition: color 0.3s ease;
+    font-family: 'Poppins', 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+
+.footer-liens a:hover {
+    color: #3b82f6;
+}
+
+/* ============================================ */
+/* 12. ANIMATIONS                               */
+/* ============================================ */
+@keyframes slideDown {
+    from { opacity: 0; transform: translateY(-8px); }
+    to   { opacity: 1; transform: translateY(0); }
+}
+
+/* ============================================ */
+/* 13. RESPONSIVE DESIGN                        */
+/* ============================================ */
+@media (max-width: 900px) {
+    .maison-entete {
+        flex-direction: column;
+        align-items: flex-start;
+        padding: 22px 24px;
+    }
+
+    .grille-maisons {
+        grid-template-columns: 1fr;
+    }
+
+    .champ-ligne {
+        grid-template-columns: 1fr;
+    }
+
+    .formulaire-section {
+        padding: 22px 20px;
+    }
+
+    .grille-equipements {
+        grid-template-columns: repeat(auto-fill, minmax(160px, 1fr));
+    }
+
+    .photos-existantes {
+        grid-template-columns: repeat(auto-fill, minmax(150px, 1fr));
+    }
+
+    .preview-photos {
+        grid-template-columns: repeat(auto-fill, minmax(140px, 1fr));
+    }
+
+    .formulaire-actions {
+        flex-direction: column;
+    }
+
+    .bouton-annuler,
+    .bouton-publier {
+        justify-content: center;
+    }
+
+    .etat-vide-maison {
+        padding: 40px 20px;
+    }
+}
+
+@media (max-width: 500px) {
+    .maison-container {
+        padding: 0 16px;
+    }
+
+    .maison-entete h1,
+    .formulaire-entete h1 {
+        font-size: 20px;
+    }
+
+    .carte-maison-image {
+        height: 160px;
+    }
+
+    .grille-equipements {
+        grid-template-columns: 1fr 1fr;
+    }
+
+    .carte-maison-actions {
+        flex-direction: column;
+    }
+
+    .bouton-action {
+        justify-content: center;
+    }
+}

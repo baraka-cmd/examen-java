@@ -1,0 +1,383 @@
+/* ============================================ */
+/* STYLES DE LA PAGE PROFIL                     */
+/* Plateforme : Location Maisons                */
+/* Auteur : BARAKA                              */
+/* Version : 1.0                                */
+/* ============================================ */
+
+/* ============================================ */
+/* 1. CONTENEUR                                 */
+/* ============================================ */
+.profil-container {
+    max-width: 800px;
+}
+
+/* ============================================ */
+/* 2. EN-TÊTE                                   */
+/* ============================================ */
+.profil-entete {
+    background: #ffffff;
+    border: 1px solid #e2e8f0;
+    border-radius: 20px;
+    padding: 28px 32px;
+    margin-bottom: 24px;
+    box-shadow: 0 1px 3px rgba(0,0,0,0.04);
+}
+
+.profil-entete h1 {
+    font-size: 24px;
+    font-weight: 700;
+    color: #0f172a;
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    margin-bottom: 6px;
+}
+
+.profil-entete h1 i {
+    color: #8b5cf6;
+    font-size: 22px;
+}
+
+.profil-entete p {
+    font-size: 14px;
+    color: #64748b;
+    margin: 0;
+}
+
+/* ============================================ */
+/* 3. CARTE D'IDENTITÉ                          */
+/* ============================================ */
+.profil-carte-identite {
+    background: #ffffff;
+    border: 1px solid #e2e8f0;
+    border-radius: 20px;
+    padding: 30px;
+    margin-bottom: 24px;
+    display: flex;
+    gap: 30px;
+    align-items: center;
+    box-shadow: 0 1px 3px rgba(0,0,0,0.04);
+}
+
+.carte-avatar-section {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 12px;
+    flex-shrink: 0;
+}
+
+.carte-avatar {
+    width: 100px;
+    height: 100px;
+    border-radius: 50%;
+    background: linear-gradient(135deg, #8b5cf6, #6d28d9);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    box-shadow: 0 8px 20px rgba(139,92,246,0.3);
+}
+
+.avatar-grand {
+    font-size: 36px;
+    font-weight: 700;
+    color: #ffffff;
+    letter-spacing: 1px;
+}
+
+.carte-statut .statut-role {
+    display: inline-flex;
+    align-items: center;
+    gap: 6px;
+    padding: 6px 16px;
+    background: #f5f3ff;
+    color: #6d28d9;
+    border-radius: 20px;
+    font-size: 13px;
+    font-weight: 600;
+}
+
+.carte-infos {
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    gap: 14px;
+}
+
+.info-ligne {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 10px 0;
+    border-bottom: 1px solid #f1f5f9;
+}
+
+.info-ligne:last-child {
+    border-bottom: none;
+}
+
+.info-label {
+    font-size: 13px;
+    font-weight: 500;
+    color: #64748b;
+    display: flex;
+    align-items: center;
+    gap: 8px;
+}
+
+.info-label i {
+    color: #8b5cf6;
+    width: 18px;
+    text-align: center;
+}
+
+.info-valeur {
+    font-size: 14.5px;
+    font-weight: 600;
+    color: #0f172a;
+}
+
+.info-valeur em {
+    color: #94a3b8;
+    font-weight: 400;
+}
+
+/* ============================================ */
+/* 4. SECTIONS FORMULAIRES                      */
+/* ============================================ */
+.profil-section {
+    background: #ffffff;
+    border: 1px solid #e2e8f0;
+    border-radius: 20px;
+    padding: 28px 30px;
+    margin-bottom: 24px;
+    box-shadow: 0 1px 3px rgba(0,0,0,0.03);
+}
+
+.section-titre {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    margin-bottom: 22px;
+    padding-bottom: 16px;
+    border-bottom: 1px solid #f1f5f9;
+}
+
+.section-titre i {
+    font-size: 20px;
+    color: #8b5cf6;
+    width: 40px;
+    height: 40px;
+    background: #f5f3ff;
+    border-radius: 10px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.section-titre h2 {
+    font-size: 17px;
+    font-weight: 600;
+    color: #0f172a;
+    margin: 0;
+}
+
+/* ============================================ */
+/* 5. CHAMPS DE FORMULAIRE                      */
+/* ============================================ */
+.profil-formulaire .champ-ligne {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 18px;
+    margin-bottom: 18px;
+}
+
+.profil-formulaire .champ-groupe {
+    margin-bottom: 18px;
+}
+
+.profil-formulaire .champ-groupe label {
+    display: block;
+    font-size: 13.5px;
+    font-weight: 600;
+    color: #334155;
+    margin-bottom: 6px;
+}
+
+.profil-formulaire .champ-groupe input {
+    width: 100%;
+    padding: 13px 16px;
+    border: 2px solid #e2e8f0;
+    border-radius: 10px;
+    font-size: 14px;
+    font-family: 'Poppins', 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    color: #1e293b;
+    background: #f8fafc;
+    outline: none;
+    transition: all 0.3s ease;
+}
+
+.profil-formulaire .champ-groupe input:focus {
+    border-color: #8b5cf6;
+    background: #ffffff;
+    box-shadow: 0 0 0 4px rgba(139,92,246,0.08);
+}
+
+.profil-formulaire .champ-groupe input::placeholder {
+    color: #b0bec5;
+}
+
+.champ-icone-wrapper {
+    position: relative;
+    display: flex;
+    align-items: center;
+}
+
+.champ-icone-wrapper i {
+    position: absolute;
+    left: 14px;
+    color: #94a3b8;
+    font-size: 14px;
+    pointer-events: none;
+}
+
+.champ-icone-wrapper input {
+    padding-left: 40px !important;
+}
+
+/* ============================================ */
+/* 6. BOUTONS                                   */
+/* ============================================ */
+.formulaire-actions {
+    display: flex;
+    justify-content: flex-end;
+    padding-top: 8px;
+}
+
+.bouton-sauvegarder {
+    display: inline-flex;
+    align-items: center;
+    gap: 8px;
+    padding: 13px 24px;
+    background: linear-gradient(135deg, #8b5cf6, #6d28d9);
+    color: #ffffff;
+    border: none;
+    border-radius: 10px;
+    font-size: 14px;
+    font-weight: 600;
+    cursor: pointer;
+    font-family: inherit;
+    box-shadow: 0 4px 12px rgba(139,92,246,0.25);
+    transition: all 0.3s ease;
+}
+
+.bouton-sauvegarder:hover {
+    transform: translateY(-1px);
+    box-shadow: 0 6px 16px rgba(139,92,246,0.35);
+}
+
+.bouton-sauvegarder:active {
+    transform: translateY(0);
+}
+
+.bouton-mdp {
+    display: inline-flex;
+    align-items: center;
+    gap: 8px;
+    padding: 13px 24px;
+    background: #ffffff;
+    color: #8b5cf6;
+    border: 2px solid #8b5cf6;
+    border-radius: 10px;
+    font-size: 14px;
+    font-weight: 600;
+    cursor: pointer;
+    font-family: inherit;
+    transition: all 0.3s ease;
+}
+
+.bouton-mdp:hover {
+    background: #f5f3ff;
+    border-color: #6d28d9;
+    color: #6d28d9;
+}
+
+/* ============================================ */
+/* 7. MESSAGES                                  */
+/* ============================================ */
+.message-succes {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    background: #f0fdf4;
+    border: 1px solid #bbf7d0;
+    border-left: 4px solid #10b981;
+    color: #065f46;
+    padding: 14px 18px;
+    border-radius: 12px;
+    font-size: 14px;
+    font-weight: 500;
+    margin-bottom: 24px;
+    animation: slideDown 0.3s ease;
+}
+
+.message-succes i {
+    font-size: 18px;
+    color: #10b981;
+}
+
+.message-erreur {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    background: #fef2f2;
+    border: 1px solid #fecaca;
+    border-left: 4px solid #ef4444;
+    color: #991b1b;
+    padding: 14px 18px;
+    border-radius: 12px;
+    font-size: 14px;
+    font-weight: 500;
+    margin-bottom: 24px;
+    animation: slideDown 0.3s ease;
+}
+
+.message-erreur i {
+    font-size: 18px;
+    color: #ef4444;
+}
+
+/* ============================================ */
+/* 8. ANIMATIONS                                */
+/* ============================================ */
+@keyframes slideDown {
+    from { opacity: 0; transform: translateY(-8px); }
+    to   { opacity: 1; transform: translateY(0); }
+}
+
+/* ============================================ */
+/* 9. RESPONSIVE                                */
+/* ============================================ */
+@media (max-width: 700px) {
+    .profil-carte-identite {
+        flex-direction: column;
+        text-align: center;
+        gap: 20px;
+    }
+
+    .info-ligne {
+        flex-direction: column;
+        gap: 4px;
+        align-items: flex-start;
+    }
+
+    .profil-formulaire .champ-ligne {
+        grid-template-columns: 1fr;
+    }
+
+    .profil-entete,
+    .profil-section {
+        padding: 20px;
+    }
+}

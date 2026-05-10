@@ -1,0 +1,679 @@
+/* ============================================ */
+/* STYLES DE LA PAGE DE CONNEXION               */
+/* Plateforme : Location Maisons                */
+/* Auteur : BARAKA                              */
+/* Version : 1.0                                */
+/* ============================================ */
+
+/* ============================================ */
+/* 1. RÉINITIALISATION & BASE                   */
+/* ============================================ */
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap');
+
+body {
+    font-family: 'Poppins', 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif !important;
+}
+
+*, *::before, *::after {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+html {
+    font-size: 16px;
+    scroll-behavior: smooth;
+}
+
+body {
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    background: linear-gradient(135deg, #0f172a 0%, #1e293b 50%, #0f172a 100%);
+    background-attachment: fixed;
+    min-height: 100vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 30px 20px;
+    line-height: 1.6;
+    color: #334155;
+}
+
+/* ============================================ */
+/* 2. CONTENEUR PRINCIPAL                       */
+/* ============================================ */
+.container-connexion {
+    display: flex;
+    width: 100%;
+    max-width: 1000px;
+    min-height: 580px;
+    background: #ffffff;
+    border-radius: 24px;
+    box-shadow: 
+        0 2px 4px rgba(0,0,0,0.05),
+        0 12px 24px rgba(0,0,0,0.05),
+        0 32px 64px rgba(0,0,0,0.1),
+        0 48px 96px rgba(0,0,0,0.15);
+    overflow: hidden;
+    transition: box-shadow 0.3s ease;
+}
+
+.container-connexion:hover {
+    box-shadow: 
+        0 2px 4px rgba(0,0,0,0.05),
+        0 12px 24px rgba(0,0,0,0.05),
+        0 32px 64px rgba(0,0,0,0.12),
+        0 48px 96px rgba(0,0,0,0.18);
+}
+
+/* ============================================ */
+/* 3. PANNEAU GAUCHE (ILLUSTRATION)            */
+/* ============================================ */
+.panneau-gauche {
+    width: 42%;
+    background: linear-gradient(160deg, #1e3a5f 0%, #152238 30%, #0f172a 100%);
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    padding: 50px 35px;
+    color: #ffffff;
+    text-align: center;
+    position: relative;
+    overflow: hidden;
+}
+
+/* Motif de points décoratifs */
+.panneau-gauche::before {
+    content: '';
+    position: absolute;
+    top: -30%;
+    left: -30%;
+    width: 160%;
+    height: 160%;
+    background-image: radial-gradient(circle, rgba(255,255,255,0.04) 1px, transparent 1px);
+    background-size: 24px 24px;
+    transform: rotate(20deg);
+    pointer-events: none;
+}
+
+/* Overlay subtil */
+.panneau-gauche::after {
+    content: '';
+    position: absolute;
+    inset: 0;
+    background: linear-gradient(180deg, rgba(30,58,95,0.6) 0%, rgba(15,23,42,0.9) 100%);
+    pointer-events: none;
+}
+
+/* Logo */
+.panneau-gauche .logo-icone {
+    position: relative;
+    z-index: 2;
+    width: 90px;
+    height: 90px;
+    background: rgba(255,255,255,0.08);
+    border: 2px solid rgba(255,255,255,0.15);
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-bottom: 28px;
+    transition: all 0.4s ease;
+}
+
+.panneau-gauche .logo-icone i {
+    font-size: 42px;
+    color: #60a5fa;
+    transition: transform 0.4s ease;
+}
+
+.panneau-gauche .logo-icone:hover {
+    background: rgba(255,255,255,0.12);
+    border-color: rgba(255,255,255,0.25);
+}
+
+.panneau-gauche .logo-icone:hover i {
+    transform: scale(1.1);
+}
+
+/* Titre */
+.panneau-gauche h1 {
+    position: relative;
+    z-index: 2;
+    font-size: 30px;
+    font-weight: 700;
+    margin-bottom: 14px;
+    letter-spacing: -0.5px;
+    background: linear-gradient(135deg, #ffffff 0%, #cbd5e1 100%);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+}
+
+/* Description */
+.panneau-gauche > p {
+    position: relative;
+    z-index: 2;
+    font-size: 14.5px;
+    font-weight: 400;
+    opacity: 0.85;
+    line-height: 1.7;
+    max-width: 280px;
+    margin-bottom: 10px;
+}
+
+/* Avantages */
+.panneau-gauche .avantages {
+    position: relative;
+    z-index: 2;
+    margin-top: 35px;
+    text-align: left;
+    width: 100%;
+    max-width: 280px;
+}
+
+.avantage-item {
+    display: flex;
+    align-items: center;
+    gap: 14px;
+    margin-bottom: 16px;
+    font-size: 14px;
+    font-weight: 400;
+    opacity: 0.9;
+    transition: opacity 0.3s ease, transform 0.3s ease;
+}
+
+.avantage-item:hover {
+    opacity: 1;
+    transform: translateX(4px);
+}
+
+.avantage-item i {
+    font-size: 18px;
+    color: #60a5fa;
+    width: 22px;
+    text-align: center;
+    flex-shrink: 0;
+    filter: drop-shadow(0 0 6px rgba(96,165,250,0.4));
+}
+
+/* Lien inscription */
+.panneau-gauche .lien-inscription {
+    position: relative;
+    z-index: 2;
+    margin-top: 40px;
+    padding-top: 30px;
+    border-top: 1px solid rgba(255,255,255,0.12);
+    width: 100%;
+    max-width: 280px;
+}
+
+.lien-inscription p {
+    font-size: 13px;
+    opacity: 0.7;
+    margin-bottom: 8px;
+}
+
+.lien-inscription a {
+    display: inline-flex;
+    align-items: center;
+    gap: 8px;
+    color: #93c5fd;
+    text-decoration: none;
+    font-size: 14.5px;
+    font-weight: 600;
+    transition: all 0.3s ease;
+    padding: 10px 22px;
+    border: 2px solid rgba(147,197,253,0.4);
+    border-radius: 50px;
+}
+
+.lien-inscription a:hover {
+    background: rgba(147,197,253,0.1);
+    border-color: #93c5fd;
+    color: #bfdbfe;
+    text-decoration: none;
+}
+
+/* ============================================ */
+/* 4. PANNEAU DROIT (FORMULAIRE)               */
+/* ============================================ */
+.panneau-droit {
+    width: 58%;
+    padding: 50px 48px;
+    overflow-y: auto;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+}
+
+/* En-tête */
+.entete-formulaire {
+    margin-bottom: 32px;
+}
+
+.entete-formulaire h2 {
+    font-size: 26px;
+    font-weight: 700;
+    color: #0f172a;
+    margin-bottom: 6px;
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    letter-spacing: -0.5px;
+}
+
+.entete-formulaire h2 i {
+    color: #3b82f6;
+    font-size: 24px;
+}
+
+.entete-formulaire p {
+    font-size: 14px;
+    color: #64748b;
+    font-weight: 400;
+}
+
+/* ============================================ */
+/* 5. MESSAGE DE SUCCÈS                        */
+/* ============================================ */
+.message-succes {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    background: #f0fdf4;
+    border: 1px solid #bbf7d0;
+    border-left: 4px solid #10b981;
+    color: #065f46;
+    padding: 14px 18px;
+    border-radius: 10px;
+    font-size: 14px;
+    font-weight: 500;
+    margin-bottom: 24px;
+    animation: slideDown 0.3s ease;
+}
+
+.message-succes i {
+    font-size: 18px;
+    color: #10b981;
+    flex-shrink: 0;
+}
+
+/* ============================================ */
+/* 6. MESSAGE D'ERREUR                         */
+/* ============================================ */
+.message-erreur {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    background: #fef2f2;
+    border: 1px solid #fecaca;
+    border-left: 4px solid #ef4444;
+    color: #991b1b;
+    padding: 14px 18px;
+    border-radius: 10px;
+    font-size: 14px;
+    font-weight: 500;
+    margin-bottom: 24px;
+    animation: slideDown 0.3s ease;
+}
+
+.message-erreur i {
+    font-size: 18px;
+    color: #ef4444;
+    flex-shrink: 0;
+}
+
+@keyframes slideDown {
+    from {
+        opacity: 0;
+        transform: translateY(-8px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+/* ============================================ */
+/* 7. GROUPES DE CHAMPS                        */
+/* ============================================ */
+.groupe-champ {
+    margin-bottom: 24px;
+}
+
+.groupe-champ label {
+    display: flex;
+    align-items: center;
+    gap: 7px;
+    font-size: 13.5px;
+    font-weight: 600;
+    color: #334155;
+    margin-bottom: 7px;
+    letter-spacing: 0.2px;
+}
+
+.groupe-champ label i {
+    color: #3b82f6;
+    font-size: 14px;
+    width: 18px;
+    text-align: center;
+}
+
+/* Label avec lien (email + mot de passe oublié) */
+.label-lien {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    margin-bottom: 7px;
+}
+
+.label-lien label {
+    margin-bottom: 0;
+}
+
+.lien-mdp-oublie {
+    display: inline-flex;
+    align-items: center;
+    gap: 5px;
+    font-size: 12.5px;
+    font-weight: 500;
+    color: #64748b;
+    text-decoration: none;
+    transition: color 0.3s ease;
+}
+
+.lien-mdp-oublie i {
+    font-size: 12px;
+}
+
+.lien-mdp-oublie:hover {
+    color: #3b82f6;
+    text-decoration: underline;
+}
+
+/* Conteneur champ + icône */
+.champ-icone {
+    position: relative;
+    display: flex;
+    align-items: center;
+}
+
+.champ-icone > i:first-child {
+    position: absolute;
+    left: 16px;
+    color: #94a3b8;
+    font-size: 15px;
+    pointer-events: none;
+    z-index: 2;
+    transition: color 0.3s ease;
+}
+
+.champ-icone input {
+    width: 100%;
+    padding: 14px 16px 14px 46px;
+    border: 2px solid #e2e8f0;
+    border-radius: 12px;
+    font-size: 14.5px;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    color: #1e293b;
+    background: #f8fafc;
+    transition: all 0.3s ease;
+    outline: none;
+}
+
+.champ-icone input::placeholder {
+    color: #b0bec5;
+    font-weight: 400;
+}
+
+.champ-icone input:focus {
+    border-color: #3b82f6;
+    background: #ffffff;
+    box-shadow: 0 0 0 4px rgba(59,130,246,0.1);
+}
+
+.champ-icone:focus-within > i:first-child {
+    color: #3b82f6;
+}
+
+/* ============================================ */
+/* 8. BOUTON VISIBILITÉ MOT DE PASSE           */
+/* ============================================ */
+.bouton-visibilite {
+    position: absolute;
+    right: 6px;
+    background: transparent;
+    border: none;
+    color: #94a3b8;
+    cursor: pointer;
+    padding: 10px 12px;
+    border-radius: 8px;
+    font-size: 16px;
+    transition: all 0.3s ease;
+    z-index: 2;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.bouton-visibilite:hover {
+    color: #3b82f6;
+    background: rgba(59,130,246,0.08);
+}
+
+.bouton-visibilite:focus {
+    outline: 2px solid #3b82f6;
+    outline-offset: -2px;
+}
+
+/* ============================================ */
+/* 9. SE SOUVENIR DE MOI                       */
+/* ============================================ */
+.souvenir-moi {
+    margin-bottom: 24px;
+}
+
+.souvenir-moi label {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    cursor: pointer;
+    font-size: 14px;
+    font-weight: 400;
+    color: #475569;
+}
+
+.souvenir-moi input[type="checkbox"] {
+    width: 18px;
+    height: 18px;
+    accent-color: #3b82f6;
+    cursor: pointer;
+}
+
+/* ============================================ */
+/* 10. BOUTON DE CONNEXION                     */
+/* ============================================ */
+.bouton-connexion {
+    width: 100%;
+    padding: 16px;
+    background: linear-gradient(135deg, #3b82f6 0%, #2563eb 100%);
+    color: #ffffff;
+    border: none;
+    border-radius: 12px;
+    font-size: 16px;
+    font-weight: 600;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 10px;
+    transition: all 0.3s ease;
+    box-shadow: 0 4px 14px rgba(37,99,235,0.3);
+    letter-spacing: 0.3px;
+}
+
+.bouton-connexion:hover {
+    background: linear-gradient(135deg, #2563eb 0%, #1d4ed8 100%);
+    box-shadow: 0 6px 20px rgba(37,99,235,0.4);
+    transform: translateY(-1px);
+}
+
+.bouton-connexion:active {
+    transform: translateY(0);
+    box-shadow: 0 2px 8px rgba(37,99,235,0.3);
+}
+
+.bouton-connexion:focus {
+    outline: 3px solid #93c5fd;
+    outline-offset: 2px;
+}
+
+.bouton-connexion i {
+    font-size: 18px;
+}
+
+/* ============================================ */
+/* 11. RETOUR ACCUEIL                          */
+/* ============================================ */
+.retour-accueil {
+    text-align: center;
+    margin-top: 24px;
+}
+
+.retour-accueil a {
+    display: inline-flex;
+    align-items: center;
+    gap: 7px;
+    color: #64748b;
+    text-decoration: none;
+    font-size: 14px;
+    font-weight: 500;
+    transition: all 0.3s ease;
+    padding: 8px 16px;
+    border-radius: 8px;
+}
+
+.retour-accueil a:hover {
+    color: #3b82f6;
+    background: rgba(59,130,246,0.06);
+    text-decoration: none;
+}
+
+/* ============================================ */
+/* 12. CHAMP INVALIDE (VALIDATION JS)          */
+/* ============================================ */
+.champ-invalide {
+    border-color: #ef4444 !important;
+    background: #fef2f2 !important;
+}
+
+.champ-invalide:focus {
+    box-shadow: 0 0 0 4px rgba(239,68,68,0.1) !important;
+}
+
+.message-champ-erreur {
+    display: block;
+    color: #ef4444;
+    font-size: 12px;
+    font-weight: 500;
+    margin-top: 5px;
+    padding-left: 4px;
+    animation: fadeIn 0.3s ease;
+}
+
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+        transform: translateY(-4px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+/* Bouton désactivé (pendant soumission) */
+.bouton-connexion:disabled {
+    opacity: 0.7;
+    cursor: not-allowed;
+    transform: none !important;
+    box-shadow: none !important;
+}
+
+/* ============================================ */
+/* 13. RESPONSIVE DESIGN                       */
+/* ============================================ */
+@media (max-width: 850px) {
+    .container-connexion {
+        flex-direction: column;
+        max-width: 480px;
+        min-height: auto;
+    }
+
+    .panneau-gauche {
+        width: 100%;
+        padding: 40px 30px;
+    }
+
+    .panneau-gauche .avantages {
+        display: none;
+    }
+
+    .panneau-gauche .lien-inscription {
+        margin-top: 25px;
+        padding-top: 20px;
+    }
+
+    .panneau-droit {
+        width: 100%;
+        padding: 36px 28px;
+    }
+}
+
+@media (max-width: 500px) {
+    body {
+        padding: 0;
+    }
+
+    .container-connexion {
+        border-radius: 0;
+        min-height: 100vh;
+    }
+
+    .panneau-gauche {
+        padding: 30px 20px;
+    }
+
+    .panneau-gauche .logo-icone {
+        width: 60px;
+        height: 60px;
+    }
+
+    .panneau-gauche .logo-icone i {
+        font-size: 28px;
+    }
+
+    .panneau-gauche h1 {
+        font-size: 22px;
+    }
+
+    .panneau-droit {
+        padding: 28px 18px;
+    }
+
+    .entete-formulaire h2 {
+        font-size: 22px;
+    }
+
+    .label-lien {
+        flex-direction: column;
+        align-items: flex-start;
+        gap: 4px;
+    }
+
+    .champ-icone input {
+        padding: 12px 12px 12px 40px;
+        font-size: 13px;
+    }
+}

@@ -1,0 +1,1013 @@
+/* ============================================ */
+/* STYLES DES PAGES DE PAIEMENT                 */
+/* Plateforme : Location Maisons                */
+/* Auteur : BARAKA                              */
+/* Version : 1.0                                */
+/* ============================================ */
+
+/* ============================================ */
+/* 1. BASE & CONTENEUR                          */
+/* ============================================ */
+.paiement-main {
+    min-height: calc(100vh - 68px - 60px);
+    background: #f1f5f9;
+    padding: 28px 0 40px;
+}
+
+.paiement-container {
+    max-width: 900px;
+    margin: 0 auto;
+    padding: 0 28px;
+}
+
+/* ============================================ */
+/* 2. FIL D'ARIANE & EN-TÊTE                    */
+/* ============================================ */
+.fil-ariane {
+    margin-bottom: 20px;
+}
+
+.fil-ariane a {
+    display: inline-flex;
+    align-items: center;
+    gap: 6px;
+    font-size: 14px;
+    color: #64748b;
+    text-decoration: none;
+    font-weight: 500;
+    padding: 8px 14px;
+    border-radius: 8px;
+    transition: all 0.3s ease;
+}
+
+.fil-ariane a:hover {
+    color: #3b82f6;
+    background: #eff6ff;
+    text-decoration: none;
+}
+
+.paiement-entete,
+.paiements-entete {
+    background: #ffffff;
+    border: 1px solid #e2e8f0;
+    border-radius: 20px;
+    padding: 28px 32px;
+    margin-bottom: 24px;
+    box-shadow: 0 1px 3px rgba(0,0,0,0.04);
+}
+
+.paiement-entete h1,
+.paiements-entete h1 {
+    font-size: 24px;
+    font-weight: 700;
+    color: #0f172a;
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    margin-bottom: 6px;
+}
+
+.paiement-entete h1 i,
+.paiements-entete h1 i {
+    color: #10b981;
+    font-size: 22px;
+}
+
+.paiement-entete p,
+.paiements-entete p {
+    font-size: 14px;
+    color: #64748b;
+    margin: 0;
+}
+
+.paiements-entete {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 24px;
+    flex-wrap: wrap;
+}
+
+.paiements-entete p strong {
+    color: #10b981;
+    font-weight: 700;
+}
+
+.retour-lien {
+    display: inline-flex;
+    align-items: center;
+    gap: 6px;
+    font-size: 14px;
+    color: #64748b;
+    text-decoration: none;
+    font-weight: 500;
+    margin-bottom: 14px;
+    transition: color 0.3s ease;
+}
+
+.retour-lien:hover {
+    color: #3b82f6;
+    text-decoration: none;
+}
+
+/* ============================================ */
+/* 3. MESSAGE ERREUR                            */
+/* ============================================ */
+.message-erreur {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    background: #fef2f2;
+    border: 1px solid #fecaca;
+    border-left: 4px solid #ef4444;
+    color: #991b1b;
+    padding: 14px 18px;
+    border-radius: 12px;
+    font-size: 14px;
+    font-weight: 500;
+    margin-bottom: 24px;
+    animation: slideDown 0.3s ease;
+}
+
+.message-erreur i {
+    font-size: 18px;
+    color: #ef4444;
+}
+
+/* ============================================ */
+/* 4. CONTENU PRINCIPAL (2 COLONNES)            */
+/* ============================================ */
+.paiement-contenu {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 24px;
+    align-items: start;
+}
+
+/* ============================================ */
+/* 5. COLONNE GAUCHE : RÉCAPITULATIF            */
+/* ============================================ */
+.recap-carte {
+    background: #ffffff;
+    border: 1px solid #e2e8f0;
+    border-radius: 16px;
+    padding: 24px 28px;
+    box-shadow: 0 1px 3px rgba(0,0,0,0.04);
+}
+
+.recap-carte h3 {
+    font-size: 17px;
+    font-weight: 600;
+    color: #0f172a;
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    margin: 0 0 20px 0;
+    padding-bottom: 14px;
+    border-bottom: 1px solid #f1f5f9;
+}
+
+.recap-carte h3 i {
+    color: #3b82f6;
+}
+
+.recap-ligne {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 10px 0;
+    border-bottom: 1px solid #f8fafc;
+}
+
+.recap-ligne:last-of-type {
+    border-bottom: none;
+}
+
+.recap-label {
+    font-size: 14px;
+    color: #64748b;
+    font-weight: 400;
+}
+
+.recap-valeur {
+    font-size: 14.5px;
+    font-weight: 600;
+    color: #0f172a;
+    text-align: right;
+}
+
+.recap-total {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding-top: 16px;
+    margin-top: 12px;
+    border-top: 2px solid #e2e8f0;
+}
+
+.total-label {
+    font-size: 16px;
+    font-weight: 700;
+    color: #0f172a;
+}
+
+.total-valeur {
+    font-size: 22px;
+    font-weight: 700;
+    color: #10b981;
+}
+
+/* ============================================ */
+/* 6. COLONNE DROITE : FORMULAIRE               */
+/* ============================================ */
+.formulaire-carte {
+    background: #ffffff;
+    border: 1px solid #e2e8f0;
+    border-radius: 16px;
+    padding: 24px 28px;
+    box-shadow: 0 4px 12px rgba(0,0,0,0.06);
+}
+
+.formulaire-carte h3 {
+    font-size: 17px;
+    font-weight: 600;
+    color: #0f172a;
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    margin: 0 0 20px 0;
+    padding-bottom: 14px;
+    border-bottom: 1px solid #f1f5f9;
+}
+
+.formulaire-carte h3 i {
+    color: #10b981;
+}
+
+/* ============================================ */
+/* 7. MÉTHODES DE PAIEMENT                      */
+/* ============================================ */
+.methodes-paiement {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+    margin-bottom: 20px;
+}
+
+.methode-item {
+    display: flex;
+    align-items: center;
+    gap: 14px;
+    padding: 16px 18px;
+    border: 2px solid #e2e8f0;
+    border-radius: 12px;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    position: relative;
+}
+
+.methode-item:hover {
+    border-color: #93c5fd;
+    background: #f8faff;
+}
+
+.methode-item.active {
+    border-color: #10b981;
+    background: #f0fdf4;
+}
+
+.methode-item input[type="radio"] {
+    display: none;
+}
+
+.methode-icone {
+    width: 44px;
+    height: 44px;
+    border-radius: 10px;
+    background: #f1f5f9;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 20px;
+    color: #64748b;
+    transition: all 0.3s ease;
+}
+
+.methode-item.active .methode-icone {
+    background: #d1fae5;
+    color: #10b981;
+}
+
+.methode-nom {
+    font-size: 15px;
+    font-weight: 600;
+    color: #334155;
+    flex: 1;
+}
+
+.methode-check {
+    font-size: 20px;
+    color: #cbd5e1;
+    transition: all 0.3s ease;
+}
+
+.methode-item.active .methode-check {
+    color: #10b981;
+}
+
+/* ============================================ */
+/* 8. DÉTAILS CARTE                             */
+/* ============================================ */
+.details-carte {
+    padding: 20px;
+    background: #f8fafc;
+    border-radius: 12px;
+    margin-bottom: 20px;
+}
+
+.champ-paiement {
+    margin-bottom: 14px;
+}
+
+.champ-paiement:last-child {
+    margin-bottom: 0;
+}
+
+.champ-paiement label {
+    display: block;
+    font-size: 13px;
+    font-weight: 600;
+    color: #475569;
+    margin-bottom: 5px;
+}
+
+.champ-paiement input {
+    width: 100%;
+    padding: 12px 16px;
+    border: 2px solid #e2e8f0;
+    border-radius: 10px;
+    font-size: 14px;
+    font-family: 'Poppins', 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    color: #334155;
+    background: #ffffff;
+    outline: none;
+    transition: all 0.3s ease;
+}
+
+.champ-paiement input:focus {
+    border-color: #3b82f6;
+    box-shadow: 0 0 0 4px rgba(59,130,246,0.08);
+}
+
+.champ-paiement input::placeholder {
+    color: #b0bec5;
+}
+
+.champ-icone-paiement {
+    position: relative;
+    display: flex;
+    align-items: center;
+}
+
+.champ-icone-paiement i {
+    position: absolute;
+    left: 14px;
+    color: #94a3b8;
+    font-size: 14px;
+    pointer-events: none;
+}
+
+.champ-icone-paiement input {
+    padding-left: 40px;
+}
+
+.champ-ligne-paiement {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 14px;
+}
+
+/* ============================================ */
+/* 9. SÉCURITÉ                                  */
+/* ============================================ */
+.paiement-securite {
+    display: flex;
+    gap: 16px;
+    margin-bottom: 20px;
+    padding: 14px 16px;
+    background: #f0fdf4;
+    border-radius: 10px;
+    border: 1px solid #bbf7d0;
+}
+
+.securite-item {
+    display: flex;
+    align-items: center;
+    gap: 6px;
+    font-size: 12.5px;
+    font-weight: 500;
+    color: #065f46;
+}
+
+.securite-item i {
+    color: #10b981;
+    font-size: 13px;
+}
+
+/* ============================================ */
+/* 10. BOUTON PAYER                             */
+/* ============================================ */
+.bouton-payer {
+    width: 100%;
+    padding: 16px;
+    background: linear-gradient(135deg, #10b981, #059669);
+    color: #ffffff;
+    border: none;
+    border-radius: 12px;
+    font-size: 16px;
+    font-weight: 600;
+    cursor: pointer;
+    font-family: inherit;
+    box-shadow: 0 4px 14px rgba(16,185,129,0.3);
+    transition: all 0.3s ease;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 8px;
+}
+
+.bouton-payer:hover {
+    background: linear-gradient(135deg, #059669, #047857);
+    box-shadow: 0 6px 18px rgba(16,185,129,0.4);
+    transform: translateY(-1px);
+}
+
+.bouton-payer:active {
+    transform: translateY(0);
+}
+
+.bouton-payer:disabled {
+    opacity: 0.7;
+    cursor: not-allowed;
+    transform: none;
+}
+
+/* ============================================ */
+/* 11. INFO SIMULATION                          */
+/* ============================================ */
+.info-simulation {
+    text-align: center;
+    font-size: 12.5px;
+    color: #94a3b8;
+    margin: 16px 0 0 0;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 6px;
+}
+
+.info-simulation i {
+    font-size: 12px;
+}
+
+/* ============================================ */
+/* 12. PAGE CONFIRMATION PAIEMENT               */
+/* ============================================ */
+.confirmation-carte-paiement {
+    max-width: 600px;
+    margin: 0 auto;
+    text-align: center;
+}
+
+.confirmation-icone-paiement {
+    width: 90px;
+    height: 90px;
+    border-radius: 50%;
+    background: #f0fdf4;
+    color: #10b981;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 42px;
+    margin: 0 auto 20px;
+    box-shadow: 0 0 0 12px rgba(16,185,129,0.1);
+    animation: pulseSuccess 2s ease-out;
+}
+
+.confirmation-carte-paiement h1 {
+    font-size: 26px;
+    font-weight: 700;
+    color: #0f172a;
+    margin: 0 0 8px 0;
+}
+
+.confirmation-message-paiement {
+    font-size: 15px;
+    color: #64748b;
+    max-width: 400px;
+    margin: 0 auto 28px;
+}
+
+/* Reçu */
+.recu-paiement {
+    background: #ffffff;
+    border: 1px solid #e2e8f0;
+    border-radius: 16px;
+    overflow: hidden;
+    text-align: left;
+    margin-bottom: 24px;
+    box-shadow: 0 4px 12px rgba(0,0,0,0.06);
+}
+
+.recu-entete {
+    background: #10b981;
+    color: #ffffff;
+    padding: 16px 20px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.recu-logo {
+    font-weight: 700;
+    font-size: 14px;
+}
+
+.recu-titre {
+    font-size: 13px;
+    font-weight: 500;
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
+}
+
+.recu-corps {
+    padding: 20px;
+}
+
+.recu-ligne {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 8px 0;
+    border-bottom: 1px solid #f8fafc;
+}
+
+.recu-separateur {
+    height: 1px;
+    background: #e2e8f0;
+    margin: 8px 0;
+}
+
+.recu-total {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 12px 0 8px;
+}
+
+.recu-total .total-valeur {
+    font-size: 22px;
+    font-weight: 700;
+    color: #10b981;
+}
+
+.recu-statut {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 8px;
+    padding: 12px;
+    margin-top: 8px;
+    background: #f0fdf4;
+    border-radius: 8px;
+    font-size: 14px;
+    font-weight: 600;
+    color: #059669;
+}
+
+.recu-statut i {
+    font-size: 16px;
+}
+
+/* Actions */
+.confirmation-actions-paiement {
+    display: flex;
+    gap: 10px;
+    justify-content: center;
+    flex-wrap: wrap;
+}
+
+.bouton-imprimer {
+    display: inline-flex;
+    align-items: center;
+    gap: 8px;
+    padding: 13px 24px;
+    background: #ffffff;
+    color: #64748b;
+    border: 2px solid #e2e8f0;
+    border-radius: 10px;
+    font-size: 14px;
+    font-weight: 600;
+    cursor: pointer;
+    font-family: inherit;
+    transition: all 0.3s ease;
+}
+
+.bouton-imprimer:hover {
+    background: #f8fafc;
+    border-color: #cbd5e1;
+    color: #475569;
+}
+
+/* ============================================ */
+/* 13. PAGE MES PAIEMENTS                       */
+/* ============================================ */
+.total-paye-badge {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 4px;
+    padding: 16px 28px;
+    background: #f0fdf4;
+    border: 2px solid #bbf7d0;
+    border-radius: 16px;
+}
+
+.total-paye-badge .total-label {
+    font-size: 12px;
+    font-weight: 500;
+    color: #64748b;
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
+}
+
+.total-paye-badge .total-valeur {
+    font-size: 26px;
+    font-weight: 700;
+    color: #10b981;
+}
+
+.paiements-liste {
+    display: flex;
+    flex-direction: column;
+    gap: 14px;
+}
+
+.carte-paiement {
+    display: flex;
+    align-items: center;
+    gap: 20px;
+    padding: 20px 24px;
+    background: #ffffff;
+    border: 1px solid #e2e8f0;
+    border-radius: 16px;
+    box-shadow: 0 1px 3px rgba(0,0,0,0.04);
+    transition: all 0.3s ease;
+    border-left: 4px solid #10b981;
+}
+
+.carte-paiement:hover {
+    box-shadow: 0 4px 12px rgba(0,0,0,0.08);
+    border-color: #cbd5e1;
+}
+
+.carte-paiement-gauche {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 8px;
+    flex-shrink: 0;
+    min-width: 100px;
+}
+
+.paiement-statut {
+    display: inline-flex;
+    align-items: center;
+    gap: 6px;
+    padding: 5px 12px;
+    background: #f0fdf4;
+    color: #059669;
+    border-radius: 20px;
+    font-size: 12.5px;
+    font-weight: 600;
+}
+
+.paiement-reference {
+    font-size: 18px;
+    font-weight: 700;
+    color: #10b981;
+}
+
+.carte-paiement-milieu {
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    gap: 6px;
+}
+
+.carte-paiement-milieu h3 {
+    font-size: 16px;
+    font-weight: 600;
+    color: #0f172a;
+    margin: 0;
+}
+
+.paiement-adresse {
+    font-size: 13px;
+    color: #64748b;
+    display: flex;
+    align-items: center;
+    gap: 5px;
+}
+
+.paiement-adresse i {
+    color: #3b82f6;
+    font-size: 12px;
+}
+
+.paiement-dates {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 12px;
+    font-size: 13px;
+    color: #64748b;
+}
+
+.paiement-dates span {
+    display: flex;
+    align-items: center;
+    gap: 5px;
+}
+
+.paiement-dates i {
+    font-size: 11px;
+    color: #94a3b8;
+}
+
+.carte-paiement-droite {
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
+    flex-shrink: 0;
+}
+
+.bouton-voir-recue {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    gap: 6px;
+    padding: 9px 16px;
+    background: #10b981;
+    color: #ffffff;
+    border-radius: 8px;
+    font-size: 12.5px;
+    font-weight: 600;
+    text-decoration: none;
+    transition: all 0.3s ease;
+    white-space: nowrap;
+}
+
+.bouton-voir-recue:hover {
+    background: #059669;
+    color: #ffffff;
+    text-decoration: none;
+}
+
+.bouton-voir-maison-paiement {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    gap: 6px;
+    padding: 9px 16px;
+    background: #f1f5f9;
+    color: #64748b;
+    border: 1px solid #e2e8f0;
+    border-radius: 8px;
+    font-size: 12.5px;
+    font-weight: 500;
+    text-decoration: none;
+    transition: all 0.3s ease;
+    white-space: nowrap;
+}
+
+.bouton-voir-maison-paiement:hover {
+    background: #e2e8f0;
+    color: #475569;
+    text-decoration: none;
+}
+
+/* État vide */
+.etat-vide-paiements {
+    background: #ffffff;
+    border: 2px dashed #e2e8f0;
+    border-radius: 20px;
+    padding: 60px 40px;
+    text-align: center;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 16px;
+}
+
+.etat-vide-paiements .vide-illustration {
+    width: 100px;
+    height: 100px;
+    border-radius: 50%;
+    background: #f0fdf4;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-bottom: 8px;
+}
+
+.etat-vide-paiements .vide-illustration i {
+    font-size: 44px;
+    color: #10b981;
+}
+
+.etat-vide-paiements h2 {
+    font-size: 22px;
+    font-weight: 700;
+    color: #0f172a;
+    margin: 0;
+}
+
+.etat-vide-paiements p {
+    font-size: 15px;
+    color: #64748b;
+    max-width: 450px;
+    margin: 0;
+}
+
+/* ============================================ */
+/* 14. BOUTONS GÉNÉRIQUES                       */
+/* ============================================ */
+.bouton-primaire {
+    display: inline-flex;
+    align-items: center;
+    gap: 8px;
+    padding: 13px 24px;
+    background: linear-gradient(135deg, #3b82f6, #2563eb);
+    color: #ffffff;
+    border: none;
+    border-radius: 10px;
+    font-size: 14px;
+    font-weight: 600;
+    cursor: pointer;
+    text-decoration: none;
+    font-family: inherit;
+    box-shadow: 0 4px 12px rgba(37,99,235,0.25);
+    transition: all 0.3s ease;
+}
+
+.bouton-primaire:hover {
+    transform: translateY(-1px);
+    box-shadow: 0 6px 16px rgba(37,99,235,0.35);
+    color: #ffffff;
+    text-decoration: none;
+}
+
+.bouton-secondaire {
+    display: inline-flex;
+    align-items: center;
+    gap: 8px;
+    padding: 13px 24px;
+    background: #ffffff;
+    color: #3b82f6;
+    border: 2px solid #3b82f6;
+    border-radius: 10px;
+    font-size: 14px;
+    font-weight: 600;
+    cursor: pointer;
+    text-decoration: none;
+    font-family: inherit;
+    transition: all 0.3s ease;
+}
+
+.bouton-secondaire:hover {
+    background: #eff6ff;
+    color: #1d4ed8;
+    text-decoration: none;
+}
+
+/* ============================================ */
+/* 15. FOOTER                                   */
+/* ============================================ */
+.dashboard-footer {
+    background: #ffffff;
+    border-top: 1px solid #e2e8f0;
+    padding: 18px 0;
+}
+
+.footer-contenu {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
+.footer-contenu p {
+    font-size: 13px;
+    color: #94a3b8;
+    margin: 0;
+}
+
+.footer-liens {
+    display: flex;
+    gap: 20px;
+}
+
+.footer-liens a {
+    font-size: 13px;
+    color: #64748b;
+    text-decoration: none;
+    transition: color 0.3s ease;
+}
+
+.footer-liens a:hover {
+    color: #3b82f6;
+}
+
+/* ============================================ */
+/* 16. ANIMATIONS                               */
+/* ============================================ */
+@keyframes slideDown {
+    from { opacity: 0; transform: translateY(-8px); }
+    to   { opacity: 1; transform: translateY(0); }
+}
+
+@keyframes pulseSuccess {
+    0%   { box-shadow: 0 0 0 0 rgba(16,185,129,0.4); }
+    50%  { box-shadow: 0 0 0 20px rgba(16,185,129,0); }
+    100% { box-shadow: 0 0 0 0 rgba(16,185,129,0); }
+}
+
+/* ============================================ */
+/* 17. RESPONSIVE                               */
+/* ============================================ */
+@media (max-width: 750px) {
+    .paiement-contenu {
+        grid-template-columns: 1fr;
+    }
+
+    .paiement-entete,
+    .paiements-entete,
+    .recap-carte,
+    .formulaire-carte {
+        padding: 20px;
+    }
+
+    .champ-ligne-paiement {
+        grid-template-columns: 1fr;
+    }
+
+    .paiement-securite {
+        flex-direction: column;
+        gap: 8px;
+    }
+
+    .carte-paiement {
+        flex-direction: column;
+        align-items: flex-start;
+        gap: 14px;
+    }
+
+    .carte-paiement-droite {
+        flex-direction: row;
+        width: 100%;
+    }
+
+    .paiements-entete {
+        flex-direction: column;
+        align-items: flex-start;
+    }
+
+    .confirmation-actions-paiement {
+        flex-direction: column;
+    }
+
+    .bouton-primaire,
+    .bouton-secondaire,
+    .bouton-imprimer {
+        justify-content: center;
+    }
+}
+
+@media (max-width: 500px) {
+    .paiement-container {
+        padding: 0 16px;
+    }
+
+    .paiement-entete h1,
+    .paiements-entete h1 {
+        font-size: 20px;
+    }
+
+    .details-carte {
+        padding: 14px;
+    }
+
+    .bouton-payer {
+        font-size: 14px;
+        padding: 14px;
+    }
+}

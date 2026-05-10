@@ -1,0 +1,437 @@
+/* ============================================ */
+/* STYLES DU FOOTER PROFESSIONNEL               */
+/* Plateforme : Location Maisons                */
+/* Auteur : Baraka Ntwali                       */
+/* Version : 1.0                                */
+/* ============================================ */
+
+/* ============================================ */
+/* 1. FOOTER PRINCIPAL                          */
+/* ============================================ */
+.site-footer {
+    font-family: 'Poppins', 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif !important;
+}
+.site-footer {
+    background: linear-gradient(180deg, #0f172a 0%, #0a0f1a 100%);
+    color: #cbd5e1;
+    padding: 60px 0 0;
+    position: relative;
+}
+
+.site-footer::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    height: 3px;
+    background: linear-gradient(90deg, #3b82f6, #10b981, #f59e0b, #ef4444);
+}
+
+.footer-container {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 28px;
+    display: grid;
+    grid-template-columns: 1.5fr 1fr 1fr 1.2fr;
+    gap: 40px;
+}
+
+/* ============================================ */
+/* 2. COLONNES                                  */
+/* ============================================ */
+.footer-colonne {
+    display: flex;
+    flex-direction: column;
+    gap: 14px;
+}
+
+.footer-colonne h4 {
+    font-size: 15px;
+    font-weight: 700;
+    color: #ffffff;
+    margin-bottom: 6px;
+    position: relative;
+    padding-bottom: 12px;
+}
+
+.footer-colonne h4::after {
+    content: '';
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 30px;
+    height: 2px;
+    background: #3b82f6;
+    border-radius: 1px;
+}
+
+/* ============================================ */
+/* 3. LOGO + DESCRIPTION                        */
+/* ============================================ */
+.footer-logo {
+    display: flex;
+    align-items: center;
+    gap: 14px;
+    margin-bottom: 4px;
+}
+
+.footer-logo-icone {
+    width: 48px;
+    height: 48px;
+    background: linear-gradient(135deg, #3b82f6, #2563eb);
+    border-radius: 14px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    box-shadow: 0 4px 12px rgba(37,99,235,0.4);
+    flex-shrink: 0;
+}
+
+.footer-logo-icone i {
+    font-size: 22px;
+    color: #ffffff;
+}
+
+.footer-logo-texte {
+    display: flex;
+    flex-direction: column;
+}
+
+.logo-nom {
+    font-size: 20px;
+    font-weight: 700;
+    color: #ffffff;
+    letter-spacing: -0.3px;
+}
+
+.logo-slogan {
+    font-size: 12px;
+    color: #64748b;
+    font-weight: 400;
+}
+
+.footer-description {
+    font-size: 13.5px;
+    color: #94a3b8;
+    line-height: 1.7;
+    margin: 8px 0 6px;
+}
+
+/* ============================================ */
+/* 4. RÉSEAUX SOCIAUX                           */
+/* ============================================ */
+.footer-reseaux {
+    margin-top: 8px;
+}
+
+.reseaux-titre {
+    display: block;
+    font-size: 12px;
+    font-weight: 600;
+    color: #64748b;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    margin-bottom: 10px;
+}
+
+.reseaux-icones {
+    display: flex;
+    gap: 10px;
+}
+
+.reseau-lien {
+    width: 38px;
+    height: 38px;
+    border-radius: 50%;
+    background: rgba(255,255,255,0.05);
+    border: 1px solid rgba(255,255,255,0.08);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 16px;
+    color: #94a3b8;
+    text-decoration: none;
+    transition: all 0.3s ease;
+}
+
+.reseau-lien:hover {
+    background: #3b82f6;
+    color: #ffffff;
+    border-color: #3b82f6;
+    transform: translateY(-3px);
+    box-shadow: 0 4px 12px rgba(59,130,246,0.3);
+}
+
+/* ============================================ */
+/* 5. LISTES DE LIENS                           */
+/* ============================================ */
+.footer-liens {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+}
+
+.footer-liens li {
+    margin: 0;
+}
+
+.footer-liens a {
+    display: inline-flex;
+    align-items: center;
+    gap: 6px;
+    font-size: 13.5px;
+    color: #94a3b8;
+    text-decoration: none;
+    transition: all 0.3s ease;
+}
+
+.footer-liens a i {
+    font-size: 10px;
+    color: #3b82f6;
+    transition: transform 0.3s ease;
+}
+
+.footer-liens a:hover {
+    color: #ffffff;
+    transform: translateX(3px);
+}
+
+.footer-liens a:hover i {
+    transform: translateX(2px);
+}
+
+/* ============================================ */
+/* 6. CONTACT                                   */
+/* ============================================ */
+.footer-contact {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+    display: flex;
+    flex-direction: column;
+    gap: 12px;
+}
+
+.footer-contact li {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    font-size: 13.5px;
+    color: #94a3b8;
+}
+
+.footer-contact li i {
+    width: 18px;
+    color: #3b82f6;
+    font-size: 14px;
+    text-align: center;
+    flex-shrink: 0;
+}
+
+.footer-contact li a {
+    color: #94a3b8;
+    text-decoration: none;
+    transition: color 0.3s ease;
+}
+
+.footer-contact li a:hover {
+    color: #60a5fa;
+}
+
+.footer-contact li strong {
+    color: #e2e8f0;
+}
+
+/* ============================================ */
+/* 7. BOUTONS DU FOOTER                         */
+/* ============================================ */
+.footer-boutons {
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
+    margin-top: 6px;
+}
+
+.footer-bouton {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    gap: 8px;
+    padding: 10px 16px;
+    border-radius: 8px;
+    font-size: 13px;
+    font-weight: 600;
+    text-decoration: none;
+    transition: all 0.3s ease;
+}
+
+.footer-bouton-contact {
+    background: rgba(59,130,246,0.15);
+    color: #60a5fa;
+    border: 1px solid rgba(59,130,246,0.3);
+}
+
+.footer-bouton-contact:hover {
+    background: #3b82f6;
+    color: #ffffff;
+    border-color: #3b82f6;
+}
+
+.footer-bouton-whatsapp {
+    background: rgba(16,185,129,0.15);
+    color: #34d399;
+    border: 1px solid rgba(16,185,129,0.3);
+}
+
+.footer-bouton-whatsapp:hover {
+    background: #10b981;
+    color: #ffffff;
+    border-color: #10b981;
+}
+
+/* ============================================ */
+/* 8. BARRE BASSE                               */
+/* ============================================ */
+.footer-barre {
+    margin-top: 50px;
+    padding: 20px 0;
+    border-top: 1px solid rgba(255,255,255,0.06);
+}
+
+.footer-barre .footer-container {
+    display: block;
+}
+
+.footer-barre-contenu {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    flex-wrap: wrap;
+    gap: 10px;
+}
+
+.footer-barre-contenu p {
+    font-size: 13px;
+    color: #64748b;
+    margin: 0;
+}
+
+.footer-barre-contenu p strong {
+    color: #94a3b8;
+}
+
+.footer-barre-liens {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    flex-wrap: wrap;
+}
+
+.footer-barre-liens a {
+    font-size: 12.5px;
+    color: #64748b;
+    text-decoration: none;
+    transition: color 0.3s ease;
+}
+
+.footer-barre-liens a:hover {
+    color: #60a5fa;
+}
+
+.separateur {
+    color: rgba(255,255,255,0.1);
+    font-size: 12px;
+}
+
+/* ============================================ */
+/* 9. BOUTON RETOUR EN HAUT                     */
+/* ============================================ */
+.bouton-retour-haut {
+    position: fixed;
+    bottom: 30px;
+    right: 30px;
+    width: 46px;
+    height: 46px;
+    border-radius: 50%;
+    background: #3b82f6;
+    color: #ffffff;
+    border: none;
+    cursor: pointer;
+    font-size: 18px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    box-shadow: 0 4px 16px rgba(59,130,246,0.4);
+    opacity: 0;
+    visibility: hidden;
+    transform: translateY(20px);
+    transition: all 0.3s ease;
+    z-index: 999;
+}
+
+.bouton-retour-haut.visible {
+    opacity: 1;
+    visibility: visible;
+    transform: translateY(0);
+}
+
+.bouton-retour-haut:hover {
+    background: #2563eb;
+    transform: translateY(-3px);
+    box-shadow: 0 6px 20px rgba(59,130,246,0.5);
+}
+
+.bouton-retour-haut:active {
+    transform: translateY(0);
+}
+
+/* ============================================ */
+/* 10. RESPONSIVE                               */
+/* ============================================ */
+@media (max-width: 900px) {
+    .footer-container {
+        grid-template-columns: 1fr 1fr;
+        gap: 30px;
+    }
+
+    .footer-colonne-large {
+        grid-column: span 2;
+    }
+
+    .footer-barre-contenu {
+        flex-direction: column;
+        text-align: center;
+        gap: 8px;
+    }
+}
+
+@media (max-width: 550px) {
+    .site-footer {
+        padding: 40px 0 0;
+    }
+
+    .footer-container {
+        grid-template-columns: 1fr;
+        gap: 30px;
+    }
+
+    .footer-colonne-large {
+        grid-column: span 1;
+    }
+
+    .footer-barre-liens {
+        justify-content: center;
+    }
+
+    .bouton-retour-haut {
+        bottom: 20px;
+        right: 20px;
+        width: 40px;
+        height: 40px;
+        font-size: 16px;
+    }
+}

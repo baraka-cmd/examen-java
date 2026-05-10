@@ -1,0 +1,514 @@
+/* ============================================ */
+/* STYLES DU HEADER DU DASHBOARD                */
+/* Plateforme : Location Maisons                */
+/* Auteur : BARAKA                              */
+/* Version : 1.0                                */
+/* ============================================ */
+
+/* ============================================ */
+/* 1. HEADER PRINCIPAL                          */
+/* ============================================ */
+body {
+    font-family: 'Poppins', 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif !important;
+}
+
+.header-dashboard {
+    background: #ffffff;
+    border-bottom: 1px solid #e2e8f0;
+    position: sticky;
+    top: 0;
+    z-index: 1000;
+    box-shadow: 0 1px 3px rgba(0,0,0,0.05);
+}
+
+.header-container {
+    max-width: 1280px;
+    margin: 0 auto;
+    padding: 0 28px;
+    height: 68px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 20px;
+}
+
+/* ============================================ */
+/* 2. LOGO                                      */
+/* ============================================ */
+.header-logo {
+    flex-shrink: 0;
+}
+
+.logo-lien {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    text-decoration: none;
+    transition: opacity 0.3s ease;
+}
+
+.logo-lien:hover {
+    opacity: 0.85;
+}
+
+.logo-icone {
+    width: 42px;
+    height: 42px;
+    background: linear-gradient(135deg, #3b82f6 0%, #2563eb 100%);
+    border-radius: 12px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    box-shadow: 0 4px 12px rgba(37,99,235,0.3);
+}
+
+.logo-icone i {
+    font-size: 20px;
+    color: #ffffff;
+}
+
+.logo-texte {
+    font-size: 20px;
+    font-weight: 700;
+    color: #0f172a;
+    letter-spacing: -0.3px;
+    display: none;
+}
+
+@media (min-width: 768px) {
+    .logo-texte {
+        display: inline;
+    }
+}
+
+/* ============================================ */
+/* 3. NAVIGATION                                */
+/* ============================================ */
+.header-nav {
+    display: none;
+}
+
+@media (min-width: 900px) {
+    .header-nav {
+        display: flex;
+        flex: 1;
+        justify-content: center;
+    }
+}
+
+.nav-liste {
+    display: flex;
+    align-items: center;
+    list-style: none;
+    gap: 6px;
+    margin: 0;
+    padding: 0;
+}
+
+.nav-item {
+    position: relative;
+}
+
+.nav-lien {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    padding: 10px 16px;
+    text-decoration: none;
+    color: #64748b;
+    font-size: 14px;
+    font-weight: 500;
+    border-radius: 10px;
+    transition: all 0.3s ease;
+    white-space: nowrap;
+    position: relative;
+}
+
+.nav-lien i {
+    font-size: 16px;
+    width: 20px;
+    text-align: center;
+    transition: transform 0.3s ease;
+}
+
+.nav-lien:hover {
+    color: #1e293b;
+    background: #f1f5f9;
+}
+
+.nav-lien:hover i {
+    transform: translateY(-1px);
+}
+
+.nav-lien.actif {
+    color: #3b82f6;
+    background: #eff6ff;
+    font-weight: 600;
+}
+
+.nav-lien.actif::after {
+    content: '';
+    position: absolute;
+    bottom: 2px;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 20px;
+    height: 3px;
+    background: #3b82f6;
+    border-radius: 3px;
+}
+
+/* Badge */
+.badge {
+    background: #3b82f6;
+    color: #ffffff;
+    font-size: 11px;
+    font-weight: 700;
+    padding: 2px 7px;
+    border-radius: 20px;
+    min-width: 20px;
+    text-align: center;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    line-height: 1;
+}
+
+.badge-attention {
+    background: #f59e0b;
+    animation: pulse 2s infinite;
+}
+
+.badge-message {
+    background: #ef4444;
+}
+
+.badge-notification {
+    background: #f59e0b;
+}
+
+@keyframes pulse {
+    0%, 100% { transform: scale(1); }
+    50% { transform: scale(1.1); }
+}
+
+/* ============================================ */
+/* 4. ZONE UTILISATEUR                          */
+/* ============================================ */
+.header-utilisateur {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    flex-shrink: 0;
+}
+
+/* Boutons icônes */
+.bouton-messages,
+.bouton-notifications {
+    position: relative;
+    width: 40px;
+    height: 40px;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: #64748b;
+    text-decoration: none;
+    transition: all 0.3s ease;
+    background: transparent;
+    border: none;
+    cursor: pointer;
+}
+
+.bouton-messages:hover,
+.bouton-notifications:hover {
+    background: #f1f5f9;
+    color: #3b82f6;
+}
+
+.bouton-messages i,
+.bouton-notifications i {
+    font-size: 18px;
+}
+
+.badge-message,
+.badge-notification {
+    position: absolute;
+    top: 2px;
+    right: 2px;
+}
+
+/* ============================================ */
+/* 5. MENU PROFIL (DROPDOWN)                   */
+/* ============================================ */
+.menu-profil {
+    position: relative;
+}
+
+.bouton-profil {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    padding: 6px 14px 6px 6px;
+    border: 1px solid #e2e8f0;
+    border-radius: 50px;
+    background: #f8fafc;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    font-family: inherit;
+}
+
+.bouton-profil:hover {
+    background: #f1f5f9;
+    border-color: #cbd5e1;
+}
+
+.avatar {
+    width: 36px;
+    height: 36px;
+    border-radius: 50%;
+    overflow: hidden;
+    flex-shrink: 0;
+}
+
+.avatar-image {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+.avatar-initiales {
+    width: 100%;
+    height: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background: linear-gradient(135deg, #3b82f6 0%, #2563eb 100%);
+    color: #ffffff;
+    font-size: 14px;
+    font-weight: 700;
+    letter-spacing: 0.5px;
+}
+
+.profil-nom {
+    font-size: 14px;
+    font-weight: 500;
+    color: #334155;
+    display: none;
+}
+
+@media (min-width: 768px) {
+    .profil-nom {
+        display: inline;
+    }
+}
+
+.bouton-profil .fa-chevron-down {
+    font-size: 11px;
+    color: #94a3b8;
+    transition: transform 0.3s ease;
+}
+
+.bouton-profil.ouvert .fa-chevron-down {
+    transform: rotate(180deg);
+}
+
+/* Dropdown */
+.dropdown-menu {
+    position: absolute;
+    top: calc(100% + 8px);
+    right: 0;
+    width: 280px;
+    background: #ffffff;
+    border: 1px solid #e2e8f0;
+    border-radius: 14px;
+    box-shadow: 0 10px 25px rgba(0,0,0,0.12);
+    padding: 8px 0;
+    opacity: 0;
+    visibility: hidden;
+    transform: translateY(-8px);
+    transition: all 0.25s ease;
+    z-index: 1001;
+}
+
+.dropdown-menu.visible {
+    opacity: 1;
+    visibility: visible;
+    transform: translateY(0);
+}
+
+.dropdown-entete {
+    padding: 14px 18px 10px;
+}
+
+.dropdown-nom {
+    display: block;
+    font-size: 15px;
+    font-weight: 600;
+    color: #0f172a;
+    margin-bottom: 2px;
+}
+
+.dropdown-email {
+    display: block;
+    font-size: 13px;
+    color: #64748b;
+    margin-bottom: 6px;
+    word-break: break-all;
+}
+
+.dropdown-role {
+    display: inline-flex;
+    align-items: center;
+    gap: 5px;
+    font-size: 12px;
+    font-weight: 500;
+    color: #3b82f6;
+    background: #eff6ff;
+    padding: 3px 10px;
+    border-radius: 20px;
+}
+
+.dropdown-separateur {
+    height: 1px;
+    background: #e2e8f0;
+    margin: 6px 0;
+}
+
+.dropdown-item {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    padding: 12px 18px;
+    text-decoration: none;
+    color: #475569;
+    font-size: 14px;
+    font-weight: 400;
+    transition: all 0.2s ease;
+}
+
+.dropdown-item i {
+    font-size: 16px;
+    width: 20px;
+    text-align: center;
+    color: #94a3b8;
+    transition: color 0.3s ease;
+}
+
+.dropdown-item:hover {
+    background: #f8fafc;
+    color: #1e293b;
+}
+
+.dropdown-item:hover i {
+    color: #3b82f6;
+}
+
+.dropdown-deconnexion {
+    color: #ef4444;
+}
+
+.dropdown-deconnexion i {
+    color: #ef4444;
+}
+
+.dropdown-deconnexion:hover {
+    background: #fef2f2;
+    color: #dc2626;
+}
+
+.dropdown-deconnexion:hover i {
+    color: #dc2626;
+}
+
+/* ============================================ */
+/* 6. BOUTON MENU MOBILE (HAMBURGER)           */
+/* ============================================ */
+.bouton-menu-mobile {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    gap: 5px;
+    width: 44px;
+    height: 44px;
+    border-radius: 10px;
+    border: 1px solid #e2e8f0;
+    background: #f8fafc;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    padding: 0;
+}
+
+.bouton-menu-mobile:hover {
+    background: #f1f5f9;
+}
+
+.barre-hamburger {
+    display: block;
+    width: 20px;
+    height: 2px;
+    background: #64748b;
+    border-radius: 2px;
+    transition: all 0.3s ease;
+}
+
+.bouton-menu-mobile.ouvert .barre-hamburger:nth-child(1) {
+    transform: translateY(7px) rotate(45deg);
+}
+
+.bouton-menu-mobile.ouvert .barre-hamburger:nth-child(2) {
+    opacity: 0;
+}
+
+.bouton-menu-mobile.ouvert .barre-hamburger:nth-child(3) {
+    transform: translateY(-7px) rotate(-45deg);
+}
+
+@media (min-width: 900px) {
+    .bouton-menu-mobile {
+        display: none;
+    }
+}
+
+/* ============================================ */
+/* 7. MENU MOBILE (PLEIN ÉCRAN)                */
+/* ============================================ */
+.menu-mobile {
+    display: none;
+    position: fixed;
+    top: 68px;
+    left: 0;
+    width: 100%;
+    background: #ffffff;
+    border-top: 1px solid #e2e8f0;
+    box-shadow: 0 4px 12px rgba(0,0,0,0.1);
+    padding: 16px 0;
+    z-index: 999;
+    animation: slideDown 0.3s ease;
+}
+
+.menu-mobile.ouvert {
+    display: block;
+}
+
+.menu-mobile .nav-liste {
+    flex-direction: column;
+    padding: 0 20px;
+}
+
+.menu-mobile .nav-lien {
+    padding: 14px 16px;
+    border-radius: 10px;
+}
+
+@keyframes slideDown {
+    from {
+        opacity: 0;
+        transform: translateY(-10px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}

@@ -1,0 +1,972 @@
+/* ============================================ */
+/* STYLES DES DASHBOARDS                        */
+/* Plateforme : Location Maisons                */
+/* Compatible : Locataire & Propriétaire        */
+/* Auteur : BARAKA                              */
+/* Version : 2.0                                */
+/* ============================================ */
+
+/* ============================================ */
+/* 1. RÉINITIALISATION & BASE                   */
+/* ============================================ */
+*, *::before, *::after {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Poppins', 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    background: #f1f5f9;
+    color: #334155;
+    line-height: 1.6;
+    min-height: 100vh;
+}
+
+/* ============================================ */
+/* 2. CONTENEUR PRINCIPAL                       */
+/* ============================================ */
+.dashboard-main {
+    padding: 28px 0 40px;
+    min-height: calc(100vh - 68px - 60px);
+}
+
+.dashboard-container {
+    max-width: 1280px;
+    margin: 0 auto;
+    padding: 0 28px;
+}
+
+/* ============================================ */
+/* 3. SECTION BIENVENUE                         */
+/* ============================================ */
+.section-bienvenue {
+    margin-bottom: 28px;
+}
+
+.carte-bienvenue {
+    background: linear-gradient(135deg, #1e3a5f 0%, #0f172a 100%);
+    border-radius: 20px;
+    padding: 36px 40px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 30px;
+    position: relative;
+    overflow: hidden;
+    box-shadow: 0 4px 20px rgba(15, 23, 42, 0.25);
+}
+
+/* Variante propriétaire (vert foncé) */
+.carte-bienvenue-proprietaire {
+    background: linear-gradient(135deg, #14532d 0%, #052e16 100%);
+}
+
+.carte-bienvenue::before {
+    content: '';
+    position: absolute;
+    top: -50%;
+    right: -20%;
+    width: 400px;
+    height: 400px;
+    background: radial-gradient(circle, rgba(255,255,255,0.03) 1px, transparent 1px);
+    background-size: 24px 24px;
+    transform: rotate(25deg);
+    pointer-events: none;
+}
+
+.bienvenue-texte {
+    position: relative;
+    z-index: 1;
+}
+
+.bienvenue-salutation {
+    display: inline-block;
+    background: rgba(255, 255, 255, 0.12);
+    color: #93c5fd;
+    font-size: 14px;
+    font-weight: 500;
+    padding: 6px 16px;
+    border-radius: 50px;
+    margin-bottom: 16px;
+}
+
+.carte-bienvenue-proprietaire .bienvenue-salutation {
+    color: #86efac;
+}
+
+.bienvenue-texte h1 {
+    font-size: 28px;
+    font-weight: 700;
+    color: #ffffff;
+    margin-bottom: 10px;
+    letter-spacing: -0.3px;
+}
+
+.bienvenue-texte p {
+    font-size: 15px;
+    color: rgba(255, 255, 255, 0.75);
+    font-weight: 300;
+    max-width: 500px;
+}
+
+.bienvenue-illustration {
+    flex-shrink: 0;
+    width: 100px;
+    height: 100px;
+    background: rgba(255, 255, 255, 0.06);
+    border: 2px solid rgba(255, 255, 255, 0.1);
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    position: relative;
+    z-index: 1;
+}
+
+.bienvenue-illustration i {
+    font-size: 44px;
+    color: #60a5fa;
+}
+
+.carte-bienvenue-proprietaire .bienvenue-illustration i {
+    color: #4ade80;
+}
+
+/* ============================================ */
+/* 4. GRILLE STATISTIQUES                       */
+/* ============================================ */
+.section-statistiques {
+    margin-bottom: 32px;
+}
+
+.grille-statistiques {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 18px;
+}
+
+.carte-statistique {
+    background: #ffffff;
+    border-radius: 16px;
+    padding: 22px 24px;
+    display: flex;
+    align-items: center;
+    gap: 18px;
+    box-shadow: 0 1px 3px rgba(0,0,0,0.04);
+    border: 1px solid #e2e8f0;
+    transition: all 0.3s ease;
+}
+
+.carte-statistique:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 4px 12px rgba(0,0,0,0.08);
+    border-color: #cbd5e1;
+}
+
+.statistique-icone {
+    width: 52px;
+    height: 52px;
+    border-radius: 14px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-shrink: 0;
+}
+
+.statistique-icone i {
+    font-size: 22px;
+    color: #ffffff;
+}
+
+.bg-bleu { background: linear-gradient(135deg, #3b82f6, #2563eb); }
+.bg-vert { background: linear-gradient(135deg, #10b981, #059669); }
+.bg-rouge { background: linear-gradient(135deg, #ef4444, #dc2626); }
+.bg-orange { background: linear-gradient(135deg, #f59e0b, #d97706); }
+.bg-violet { background: linear-gradient(135deg, #8b5cf6, #6d28d9); }
+
+.statistique-infos {
+    display: flex;
+    flex-direction: column;
+}
+
+.statistique-valeur {
+    font-size: 26px;
+    font-weight: 700;
+    color: #0f172a;
+    line-height: 1.2;
+}
+
+.statistique-label {
+    font-size: 13px;
+    font-weight: 400;
+    color: #64748b;
+    margin-top: 2px;
+}
+
+/* ============================================ */
+/* 5. SECTION ACTIONS RAPIDES (PROPRIÉTAIRE)    */
+/* ============================================ */
+.section-actions-rapides {
+    margin-bottom: 32px;
+}
+
+.grille-actions {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 18px;
+}
+
+.carte-action {
+    background: #ffffff;
+    border: 1px solid #e2e8f0;
+    border-radius: 16px;
+    padding: 24px 20px;
+    text-align: center;
+    text-decoration: none;
+    transition: all 0.3s ease;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 12px;
+    box-shadow: 0 1px 3px rgba(0,0,0,0.04);
+}
+
+.carte-action:hover {
+    transform: translateY(-3px);
+    box-shadow: 0 8px 20px rgba(0,0,0,0.08);
+    border-color: #cbd5e1;
+    text-decoration: none;
+}
+
+.action-icone {
+    width: 56px;
+    height: 56px;
+    border-radius: 16px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.action-icone i {
+    font-size: 24px;
+    color: #ffffff;
+}
+
+.action-texte {
+    font-size: 15px;
+    font-weight: 600;
+    color: #0f172a;
+}
+
+.action-description {
+    font-size: 12.5px;
+    color: #64748b;
+    font-weight: 400;
+}
+
+/* ============================================ */
+/* 6. LAYOUT 2 COLONNES                         */
+/* ============================================ */
+.dashboard-colonnes {
+    display: grid;
+    grid-template-columns: 1fr 350px;
+    gap: 28px;
+    align-items: start;
+}
+
+/* ============================================ */
+/* 7. SECTION RÉSERVATIONS / ANNONCES           */
+/* ============================================ */
+.section-reservations {
+    margin-bottom: 28px;
+}
+
+.section-entete {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    margin-bottom: 18px;
+}
+
+.section-entete h2,
+.section-entete h3 {
+    font-size: 18px;
+    font-weight: 600;
+    color: #0f172a;
+    display: flex;
+    align-items: center;
+    gap: 10px;
+}
+
+.section-entete h2 i,
+.section-entete h3 i {
+    color: #3b82f6;
+    font-size: 18px;
+}
+
+.section-entete h3 {
+    font-size: 16px;
+}
+
+.lien-tout-voir {
+    display: inline-flex;
+    align-items: center;
+    gap: 6px;
+    font-size: 13.5px;
+    font-weight: 500;
+    color: #3b82f6;
+    text-decoration: none;
+    transition: all 0.3s ease;
+    padding: 6px 12px;
+    border-radius: 8px;
+}
+
+.lien-tout-voir:hover {
+    background: #eff6ff;
+    color: #1d4ed8;
+    text-decoration: none;
+}
+
+.lien-tout-voir-petit {
+    font-size: 12.5px;
+    color: #3b82f6;
+    text-decoration: none;
+    font-weight: 500;
+}
+
+.lien-tout-voir-petit:hover {
+    text-decoration: underline;
+}
+
+/* ============================================ */
+/* 8. CARTE RÉSERVATION / ANNONCE               */
+/* ============================================ */
+.liste-reservations {
+    display: flex;
+    flex-direction: column;
+    gap: 14px;
+}
+
+.carte-reservation {
+    background: #ffffff;
+    border-radius: 14px;
+    padding: 16px;
+    display: flex;
+    gap: 16px;
+    border: 1px solid #e2e8f0;
+    box-shadow: 0 1px 2px rgba(0,0,0,0.03);
+    transition: all 0.3s ease;
+}
+
+.carte-reservation:hover {
+    box-shadow: 0 4px 12px rgba(0,0,0,0.06);
+    border-color: #cbd5e1;
+}
+
+.reservation-image {
+    width: 140px;
+    height: 100px;
+    border-radius: 10px;
+    overflow: hidden;
+    flex-shrink: 0;
+    background: #f1f5f9;
+}
+
+.reservation-image img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+.image-placeholder {
+    width: 100%;
+    height: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background: #e2e8f0;
+}
+
+.image-placeholder i {
+    font-size: 28px;
+    color: #94a3b8;
+}
+
+.reservation-infos {
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
+}
+
+.reservation-infos h3 {
+    font-size: 15px;
+    font-weight: 600;
+    color: #0f172a;
+    margin: 0;
+}
+
+.reservation-dates {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    font-size: 13px;
+    color: #64748b;
+}
+
+.reservation-dates i {
+    font-size: 12px;
+    color: #94a3b8;
+}
+
+.reservation-details {
+    display: flex;
+    gap: 16px;
+    flex-wrap: wrap;
+}
+
+.detail-item {
+    display: flex;
+    align-items: center;
+    gap: 5px;
+    font-size: 13px;
+    color: #64748b;
+}
+
+.detail-item i {
+    font-size: 12px;
+    color: #94a3b8;
+}
+
+/* Statuts */
+.statut-badge {
+    display: inline-block;
+    padding: 4px 12px;
+    border-radius: 20px;
+    font-size: 12px;
+    font-weight: 600;
+    width: fit-content;
+}
+
+.statut-CONFIRMEE {
+    background: #eff6ff;
+    color: #2563eb;
+}
+
+.statut-EN_ATTENTE_PAIEMENT,
+.statut-EN_ATTENTE {
+    background: #fef9e7;
+    color: #d97706;
+}
+
+.statut-TERMINEE {
+    background: #f0fdf4;
+    color: #059669;
+}
+
+.statut-ANNULEE_PAR_LOCATAIRE,
+.statut-ANNULEE_PAR_PROPRIETAIRE,
+.statut-ANNULEE {
+    background: #fef2f2;
+    color: #dc2626;
+}
+
+.reservation-actions {
+    margin-top: 4px;
+    display: flex;
+    gap: 8px;
+    flex-wrap: wrap;
+}
+
+/* ============================================ */
+/* 9. BOUTONS                                   */
+/* ============================================ */
+.bouton-primaire {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    gap: 8px;
+    padding: 12px 24px;
+    background: linear-gradient(135deg, #3b82f6 0%, #2563eb 100%);
+    color: #ffffff;
+    border: none;
+    border-radius: 10px;
+    font-size: 14px;
+    font-weight: 600;
+    cursor: pointer;
+    text-decoration: none;
+    transition: all 0.3s ease;
+    box-shadow: 0 4px 12px rgba(37,99,235,0.25);
+    font-family: inherit;
+}
+
+.bouton-primaire:hover {
+    transform: translateY(-1px);
+    box-shadow: 0 6px 16px rgba(37,99,235,0.35);
+    color: #ffffff;
+    text-decoration: none;
+}
+
+.bouton-secondaire {
+    display: inline-flex;
+    align-items: center;
+    gap: 6px;
+    padding: 8px 16px;
+    background: #ffffff;
+    color: #3b82f6;
+    border: 1px solid #3b82f6;
+    border-radius: 8px;
+    font-size: 13px;
+    font-weight: 500;
+    cursor: pointer;
+    text-decoration: none;
+    transition: all 0.3s ease;
+    font-family: inherit;
+}
+
+.bouton-secondaire:hover {
+    background: #eff6ff;
+    color: #1d4ed8;
+    text-decoration: none;
+}
+
+.bouton-petit {
+    padding: 6px 14px;
+    font-size: 12px;
+    border-radius: 6px;
+}
+
+.bouton-plein {
+    width: 100%;
+}
+
+.bouton-danger {
+    background: #ffffff;
+    color: #ef4444;
+    border-color: #ef4444;
+}
+
+.bouton-danger:hover {
+    background: #fef2f2;
+    color: #dc2626;
+}
+
+.bouton-success {
+    background: #10b981;
+    color: #ffffff;
+    border: none;
+}
+
+.bouton-success:hover {
+    background: #059669;
+    color: #ffffff;
+}
+
+/* ============================================ */
+/* 10. ÉTAT VIDE                                */
+/* ============================================ */
+.etat-vide {
+    background: #ffffff;
+    border: 2px dashed #e2e8f0;
+    border-radius: 14px;
+    padding: 40px 24px;
+    text-align: center;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 12px;
+}
+
+.vide-icone {
+    width: 64px;
+    height: 64px;
+    border-radius: 50%;
+    background: #f1f5f9;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-bottom: 4px;
+}
+
+.vide-icone i {
+    font-size: 28px;
+    color: #94a3b8;
+}
+
+.etat-vide h3 {
+    font-size: 16px;
+    font-weight: 600;
+    color: #334155;
+    margin: 0;
+}
+
+.etat-vide p {
+    font-size: 14px;
+    color: #64748b;
+    max-width: 350px;
+}
+
+.etat-vide-petit {
+    padding: 24px 18px;
+    border: 1px solid #e2e8f0;
+    border-radius: 12px;
+    gap: 8px;
+}
+
+.etat-vide-petit p {
+    font-size: 13px;
+    color: #94a3b8;
+}
+
+.etat-vide-petit i {
+    font-size: 28px;
+    color: #cbd5e1;
+}
+
+/* ============================================ */
+/* 11. SIDEBAR (COLONNE DROITE)                */
+/* ============================================ */
+.colonne-droite {
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+}
+
+.carte-sidebar {
+    background: #ffffff;
+    border-radius: 16px;
+    padding: 22px;
+    border: 1px solid #e2e8f0;
+    box-shadow: 0 1px 3px rgba(0,0,0,0.03);
+}
+
+.carte-sidebar h3 {
+    font-size: 16px;
+    font-weight: 600;
+    color: #0f172a;
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    margin-bottom: 16px;
+}
+
+.carte-sidebar h3 i {
+    color: #3b82f6;
+}
+
+.carte-sidebar .section-entete {
+    margin-bottom: 14px;
+}
+
+/* ============================================ */
+/* 12. RECHERCHE RAPIDE SIDEBAR                */
+/* ============================================ */
+.formulaire-recherche-rapide {
+    display: flex;
+    flex-direction: column;
+    gap: 14px;
+}
+
+.champ-sidebar {
+    display: flex;
+    flex-direction: column;
+    gap: 5px;
+}
+
+.champ-sidebar label {
+    font-size: 12.5px;
+    font-weight: 600;
+    color: #475569;
+}
+
+.champ-icone-sidebar {
+    position: relative;
+    display: flex;
+    align-items: center;
+}
+
+.champ-icone-sidebar i {
+    position: absolute;
+    left: 14px;
+    color: #94a3b8;
+    font-size: 14px;
+    pointer-events: none;
+}
+
+.champ-icone-sidebar input {
+    width: 100%;
+    padding: 11px 14px 11px 38px;
+    border: 2px solid #e2e8f0;
+    border-radius: 10px;
+    font-size: 14px;
+    font-family: inherit;
+    color: #334155;
+    background: #f8fafc;
+    outline: none;
+    transition: all 0.3s ease;
+}
+
+.champ-icone-sidebar input:focus {
+    border-color: #3b82f6;
+    background: #ffffff;
+    box-shadow: 0 0 0 3px rgba(59,130,246,0.08);
+}
+
+.champ-icone-sidebar input::placeholder {
+    color: #b0bec5;
+}
+
+/* ============================================ */
+/* 13. LISTE FAVORIS SIDEBAR                   */
+/* ============================================ */
+.liste-favoris-sidebar {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+}
+
+.favori-item {
+    display: flex;
+    gap: 12px;
+    padding: 10px;
+    border-radius: 10px;
+    text-decoration: none;
+    transition: all 0.3s ease;
+}
+
+.favori-item:hover {
+    background: #f8fafc;
+    text-decoration: none;
+}
+
+.favori-image {
+    width: 56px;
+    height: 56px;
+    border-radius: 10px;
+    overflow: hidden;
+    flex-shrink: 0;
+    background: #f1f5f9;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.favori-image img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+.favori-image i {
+    font-size: 20px;
+    color: #94a3b8;
+}
+
+.favori-infos {
+    display: flex;
+    flex-direction: column;
+    gap: 2px;
+    justify-content: center;
+}
+
+.favori-titre {
+    font-size: 13.5px;
+    font-weight: 600;
+    color: #1e293b;
+}
+
+.favori-ville {
+    font-size: 12px;
+    color: #64748b;
+    display: flex;
+    align-items: center;
+    gap: 4px;
+}
+
+.favori-ville i {
+    font-size: 10px;
+}
+
+.favori-prix {
+    font-size: 13px;
+    font-weight: 600;
+    color: #3b82f6;
+}
+
+/* ============================================ */
+/* 14. FOOTER                                   */
+/* ============================================ */
+.dashboard-footer {
+    background: #ffffff;
+    border-top: 1px solid #e2e8f0;
+    padding: 18px 0;
+}
+
+.footer-contenu {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
+.footer-contenu p {
+    font-size: 13px;
+    color: #94a3b8;
+}
+
+.footer-liens {
+    display: flex;
+    gap: 20px;
+}
+
+.footer-liens a {
+    font-size: 13px;
+    color: #64748b;
+    text-decoration: none;
+    transition: color 0.3s ease;
+}
+
+.footer-liens a:hover {
+    color: #3b82f6;
+}
+
+/* ============================================ */
+/* 15. ANIMATIONS                               */
+/* ============================================ */
+@keyframes slideDown {
+    from { opacity: 0; transform: translateY(-8px); }
+    to { opacity: 1; transform: translateY(0); }
+}
+
+@keyframes fadeIn {
+    from { opacity: 0; transform: translateY(-4px); }
+    to { opacity: 1; transform: translateY(0); }
+}
+
+@keyframes pulse {
+    0%, 100% { transform: scale(1); }
+    50% { transform: scale(1.05); }
+}
+
+/* ============================================ */
+/* 16. RESPONSIVE DESIGN                        */
+/* ============================================ */
+@media (max-width: 1100px) {
+    .dashboard-colonnes {
+        grid-template-columns: 1fr;
+    }
+
+    .colonne-droite {
+        display: grid;
+        grid-template-columns: repeat(2, 1fr);
+        gap: 18px;
+    }
+
+    .grille-actions {
+        grid-template-columns: repeat(2, 1fr);
+    }
+}
+
+@media (max-width: 900px) {
+    .grille-statistiques {
+        grid-template-columns: repeat(2, 1fr);
+    }
+
+    .grille-actions {
+        grid-template-columns: repeat(2, 1fr);
+    }
+
+    .colonne-droite {
+        grid-template-columns: 1fr;
+    }
+
+    .carte-bienvenue {
+        flex-direction: column;
+        text-align: center;
+        padding: 28px 24px;
+    }
+
+    .bienvenue-texte p {
+        max-width: 100%;
+    }
+
+    .bienvenue-illustration {
+        width: 70px;
+        height: 70px;
+    }
+
+    .bienvenue-illustration i {
+        font-size: 32px;
+    }
+
+    .bienvenue-texte h1 {
+        font-size: 22px;
+    }
+}
+
+@media (max-width: 600px) {
+    .dashboard-container {
+        padding: 0 16px;
+    }
+
+    .grille-statistiques {
+        grid-template-columns: 1fr 1fr;
+        gap: 10px;
+    }
+
+    .grille-actions {
+        grid-template-columns: 1fr 1fr;
+        gap: 10px;
+    }
+
+    .carte-statistique {
+        padding: 16px;
+    }
+
+    .statistique-icone {
+        width: 40px;
+        height: 40px;
+        border-radius: 10px;
+    }
+
+    .statistique-icone i {
+        font-size: 18px;
+    }
+
+    .statistique-valeur {
+        font-size: 22px;
+    }
+
+    .carte-action {
+        padding: 18px 14px;
+    }
+
+    .action-icone {
+        width: 44px;
+        height: 44px;
+        border-radius: 12px;
+    }
+
+    .action-icone i {
+        font-size: 20px;
+    }
+
+    .action-texte {
+        font-size: 13px;
+    }
+
+    .carte-reservation {
+        flex-direction: column;
+    }
+
+    .reservation-image {
+        width: 100%;
+        height: 140px;
+    }
+
+    .footer-contenu {
+        flex-direction: column;
+        gap: 8px;
+        text-align: center;
+    }
+}

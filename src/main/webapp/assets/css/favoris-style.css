@@ -1,0 +1,454 @@
+/* ============================================ */
+/* STYLES DE LA PAGE DES FAVORIS                */
+/* Plateforme : Location Maisons                */
+/* Auteur : BARAKA                              */
+/* Version : 1.0                                */
+/* ============================================ */
+
+/* ============================================ */
+/* 1. BASE & CONTENEUR                          */
+/* ============================================ */
+.favoris-main {
+    min-height: calc(100vh - 68px - 60px);
+    background: #f1f5f9;
+    padding: 28px 0 40px;
+}
+
+.favoris-container {
+    max-width: 1100px;
+    margin: 0 auto;
+    padding: 0 28px;
+}
+
+/* ============================================ */
+/* 2. EN-TÊTE                                   */
+/* ============================================ */
+.favoris-entete {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 24px;
+    margin-bottom: 24px;
+    background: #ffffff;
+    padding: 28px 32px;
+    border-radius: 20px;
+    border: 1px solid #e2e8f0;
+    box-shadow: 0 1px 3px rgba(0,0,0,0.04);
+    flex-wrap: wrap;
+}
+
+.entete-gauche h1 {
+    font-size: 24px;
+    font-weight: 700;
+    color: #0f172a;
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    margin-bottom: 6px;
+}
+
+.entete-gauche h1 i {
+    color: #ef4444;
+    font-size: 22px;
+}
+
+.entete-gauche p {
+    font-size: 14px;
+    color: #64748b;
+    margin: 0;
+}
+
+.entete-gauche p strong {
+    color: #ef4444;
+    font-weight: 700;
+}
+
+.retour-lien {
+    display: inline-flex;
+    align-items: center;
+    gap: 6px;
+    font-size: 14px;
+    color: #64748b;
+    text-decoration: none;
+    font-weight: 500;
+    margin-bottom: 14px;
+    transition: color 0.3s ease;
+}
+
+.retour-lien:hover {
+    color: #3b82f6;
+    text-decoration: none;
+}
+
+.bouton-primaire {
+    display: inline-flex;
+    align-items: center;
+    gap: 8px;
+    padding: 12px 24px;
+    background: linear-gradient(135deg, #3b82f6, #2563eb);
+    color: #ffffff;
+    border: none;
+    border-radius: 12px;
+    font-size: 14px;
+    font-weight: 600;
+    cursor: pointer;
+    text-decoration: none;
+    font-family: inherit;
+    box-shadow: 0 4px 12px rgba(37,99,235,0.25);
+    transition: all 0.3s ease;
+}
+
+.bouton-primaire:hover {
+    transform: translateY(-1px);
+    box-shadow: 0 6px 16px rgba(37,99,235,0.35);
+    color: #ffffff;
+    text-decoration: none;
+}
+
+/* ============================================ */
+/* 3. MESSAGE SUCCÈS                            */
+/* ============================================ */
+.message-succes {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    background: #f0fdf4;
+    border: 1px solid #bbf7d0;
+    border-left: 4px solid #10b981;
+    color: #065f46;
+    padding: 14px 18px;
+    border-radius: 12px;
+    font-size: 14px;
+    font-weight: 500;
+    margin-bottom: 24px;
+    animation: slideDown 0.3s ease;
+}
+
+.message-succes i {
+    font-size: 18px;
+    color: #10b981;
+}
+
+/* ============================================ */
+/* 4. GRILLE DES FAVORIS                        */
+/* ============================================ */
+.favoris-grille {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(320px, 1fr));
+    gap: 20px;
+}
+
+/* ============================================ */
+/* 5. CARTE FAVORI                              */
+/* ============================================ */
+.carte-favori {
+    background: #ffffff;
+    border: 1px solid #e2e8f0;
+    border-radius: 16px;
+    overflow: hidden;
+    box-shadow: 0 1px 3px rgba(0,0,0,0.04);
+    transition: all 0.3s ease;
+    position: relative;
+}
+
+.carte-favori:hover {
+    transform: translateY(-3px);
+    box-shadow: 0 8px 20px rgba(0,0,0,0.08);
+    border-color: #cbd5e1;
+}
+
+/* Bouton retirer */
+.bouton-retirer-favori {
+    position: absolute;
+    top: 10px;
+    right: 10px;
+    width: 30px;
+    height: 30px;
+    border-radius: 50%;
+    background: rgba(255, 255, 255, 0.9);
+    color: #ef4444;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-decoration: none;
+    font-size: 14px;
+    z-index: 5;
+    transition: all 0.3s ease;
+    box-shadow: 0 2px 6px rgba(0,0,0,0.15);
+}
+
+.bouton-retirer-favori:hover {
+    background: #ef4444;
+    color: #ffffff;
+    transform: scale(1.1);
+    text-decoration: none;
+}
+
+/* Photo */
+.carte-favori-image {
+    display: block;
+    width: 100%;
+    height: 200px;
+    background: #f1f5f9;
+    overflow: hidden;
+    position: relative;
+    text-decoration: none;
+}
+
+.carte-favori-image img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    transition: transform 0.5s ease;
+}
+
+.carte-favori:hover .carte-favori-image img {
+    transform: scale(1.05);
+}
+
+.image-placeholder {
+    width: 100%;
+    height: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background: linear-gradient(135deg, #e2e8f0, #f1f5f9);
+}
+
+.image-placeholder i {
+    font-size: 44px;
+    color: #94a3b8;
+}
+
+.badge-prix-favori {
+    position: absolute;
+    bottom: 10px;
+    left: 10px;
+    background: rgba(0, 0, 0, 0.75);
+    color: #ffffff;
+    padding: 5px 12px;
+    border-radius: 8px;
+    font-size: 16px;
+    font-weight: 700;
+    backdrop-filter: blur(4px);
+}
+
+.badge-prix-favori small {
+    font-size: 11px;
+    font-weight: 400;
+    opacity: 0.8;
+    margin-left: 2px;
+}
+
+/* Infos */
+.carte-favori-infos {
+    padding: 16px 18px 18px;
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
+}
+
+.favori-titre {
+    font-size: 15px;
+    font-weight: 600;
+    color: #0f172a;
+    text-decoration: none;
+    line-height: 1.4;
+    display: -webkit-box;
+    -webkit-line-clamp: 2;
+    -webkit-box-orient: vertical;
+    overflow: hidden;
+    transition: color 0.3s ease;
+}
+
+.favori-titre:hover {
+    color: #3b82f6;
+    text-decoration: none;
+}
+
+.favori-adresse {
+    display: flex;
+    align-items: center;
+    gap: 6px;
+    font-size: 13px;
+    color: #64748b;
+}
+
+.favori-adresse i {
+    color: #3b82f6;
+    font-size: 12px;
+}
+
+.favori-caracteristiques {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 12px;
+    padding-top: 6px;
+    border-top: 1px solid #f1f5f9;
+}
+
+.favori-caracteristiques span {
+    font-size: 12.5px;
+    color: #64748b;
+    display: flex;
+    align-items: center;
+    gap: 5px;
+}
+
+.favori-caracteristiques i {
+    color: #94a3b8;
+    font-size: 11px;
+}
+
+/* Actions */
+.favori-actions {
+    padding-top: 8px;
+    border-top: 1px solid #f1f5f9;
+}
+
+.bouton-voir {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 6px;
+    padding: 10px;
+    background: #f8fafc;
+    color: #3b82f6;
+    border: 1px solid #e2e8f0;
+    border-radius: 8px;
+    font-size: 13px;
+    font-weight: 500;
+    text-decoration: none;
+    transition: all 0.3s ease;
+}
+
+.bouton-voir:hover {
+    background: #eff6ff;
+    border-color: #93c5fd;
+    color: #1d4ed8;
+    text-decoration: none;
+}
+
+/* ============================================ */
+/* 6. ÉTAT VIDE                                 */
+/* ============================================ */
+.etat-vide-favoris {
+    background: #ffffff;
+    border: 2px dashed #e2e8f0;
+    border-radius: 20px;
+    padding: 60px 40px;
+    text-align: center;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 16px;
+}
+
+.etat-vide-favoris .vide-illustration {
+    width: 100px;
+    height: 100px;
+    border-radius: 50%;
+    background: #fef2f2;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-bottom: 8px;
+}
+
+.etat-vide-favoris .vide-illustration i {
+    font-size: 44px;
+    color: #ef4444;
+}
+
+.etat-vide-favoris h2 {
+    font-size: 22px;
+    font-weight: 700;
+    color: #0f172a;
+    margin: 0;
+}
+
+.etat-vide-favoris p {
+    font-size: 15px;
+    color: #64748b;
+    max-width: 450px;
+    margin: 0;
+    line-height: 1.6;
+}
+
+/* ============================================ */
+/* 7. FOOTER                                    */
+/* ============================================ */
+.dashboard-footer {
+    background: #ffffff;
+    border-top: 1px solid #e2e8f0;
+    padding: 18px 0;
+}
+
+.footer-contenu {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
+.footer-contenu p {
+    font-size: 13px;
+    color: #94a3b8;
+    margin: 0;
+}
+
+.footer-liens {
+    display: flex;
+    gap: 20px;
+}
+
+.footer-liens a {
+    font-size: 13px;
+    color: #64748b;
+    text-decoration: none;
+    transition: color 0.3s ease;
+}
+
+.footer-liens a:hover {
+    color: #3b82f6;
+}
+
+/* ============================================ */
+/* 8. ANIMATIONS                                */
+/* ============================================ */
+@keyframes slideDown {
+    from { opacity: 0; transform: translateY(-8px); }
+    to   { opacity: 1; transform: translateY(0); }
+}
+
+/* ============================================ */
+/* 9. RESPONSIVE                                */
+/* ============================================ */
+@media (max-width: 750px) {
+    .favoris-grille {
+        grid-template-columns: 1fr;
+    }
+
+    .favoris-entete {
+        flex-direction: column;
+        align-items: flex-start;
+        padding: 20px;
+    }
+
+    .favoris-entete h1 {
+        font-size: 20px;
+    }
+
+    .carte-favori-image {
+        height: 180px;
+    }
+}
+
+@media (max-width: 500px) {
+    .favoris-container {
+        padding: 0 16px;
+    }
+
+    .etat-vide-favoris {
+        padding: 40px 20px;
+    }
+}

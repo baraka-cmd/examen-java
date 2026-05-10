@@ -1,0 +1,675 @@
+/* ============================================ */
+/* STYLES DE LA MESSAGERIE                      */
+/* Plateforme : Location Maisons                */
+/* Auteur : BARAKA                              */
+/* Version : 1.0                                */
+/* ============================================ */
+
+/* ============================================ */
+/* 1. EN-TÊTE DE PAGE MESSAGES                  */
+/* ============================================ */
+body {
+    font-family: 'Poppins', 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif !important;
+}
+.messages-entete {
+    background: #ffffff;
+    border: 1px solid #e2e8f0;
+    border-radius: 20px;
+    padding: 28px 32px;
+    margin-bottom: 24px;
+    box-shadow: 0 1px 3px rgba(0,0,0,0.04);
+}
+
+.messages-entete h1 {
+    font-size: 24px;
+    font-weight: 700;
+    color: #0f172a;
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    margin-bottom: 6px;
+    letter-spacing: -0.3px;
+}
+
+.messages-entete h1 i {
+    color: #3b82f6;
+    font-size: 22px;
+}
+
+.messages-entete p {
+    font-size: 14px;
+    color: #64748b;
+    margin: 0;
+}
+
+.messages-entete p strong {
+    color: #3b82f6;
+    font-weight: 700;
+}
+
+.non-lus-indicateur {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    background: #ef4444;
+    color: #ffffff;
+    font-weight: 700;
+    font-size: 12px;
+    min-width: 22px;
+    height: 22px;
+    padding: 0 6px;
+    border-radius: 11px;
+}
+
+/* ============================================ */
+/* 2. LISTE DES CONVERSATIONS                   */
+/* ============================================ */
+.conversations-liste {
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
+}
+
+.conversation-item {
+    display: flex;
+    align-items: center;
+    gap: 16px;
+    padding: 18px 22px;
+    background: #ffffff;
+    border: 1px solid #e2e8f0;
+    border-radius: 14px;
+    text-decoration: none;
+    transition: all 0.3s ease;
+    cursor: pointer;
+}
+
+.conversation-item:hover {
+    border-color: #93c5fd;
+    background: #f8faff;
+    box-shadow: 0 4px 12px rgba(0,0,0,0.06);
+    transform: translateX(3px);
+    text-decoration: none;
+}
+
+.conversation-non-lue {
+    border-left: 4px solid #3b82f6;
+    background: #f8faff;
+}
+
+/* Avatar */
+.conversation-avatar {
+    flex-shrink: 0;
+}
+
+.avatar-initiales-message {
+    width: 50px;
+    height: 50px;
+    border-radius: 50%;
+    background: linear-gradient(135deg, #3b82f6, #2563eb);
+    color: #ffffff;
+    font-size: 16px;
+    font-weight: 700;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    letter-spacing: 0.5px;
+}
+
+.conversation-non-lue .avatar-initiales-message {
+    background: linear-gradient(135deg, #2563eb, #1d4ed8);
+    box-shadow: 0 0 0 4px rgba(59,130,246,0.2);
+}
+
+/* Contenu */
+.conversation-contenu {
+    flex: 1;
+    min-width: 0;
+    display: flex;
+    flex-direction: column;
+    gap: 4px;
+}
+
+.conversation-haut {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 10px;
+}
+
+.conversation-nom {
+    font-size: 15px;
+    font-weight: 600;
+    color: #0f172a;
+}
+
+.conversation-date {
+    font-size: 12px;
+    color: #94a3b8;
+    font-weight: 400;
+    flex-shrink: 0;
+}
+
+.conversation-bas {
+    display: flex;
+    align-items: center;
+}
+
+.conversation-sujet {
+    font-size: 13px;
+    color: #64748b;
+    font-weight: 400;
+    display: flex;
+    align-items: center;
+    gap: 5px;
+}
+
+.conversation-sujet i {
+    font-size: 11px;
+    color: #94a3b8;
+}
+
+.conversation-apercu {
+    display: flex;
+    align-items: center;
+    gap: 6px;
+    font-size: 13.5px;
+    color: #64748b;
+    margin-top: 2px;
+}
+
+.badge-non-lu {
+    color: #3b82f6;
+    font-size: 10px;
+    animation: pulse 2s infinite;
+}
+
+/* Flèche */
+.conversation-fleche {
+    color: #cbd5e1;
+    font-size: 14px;
+    flex-shrink: 0;
+    transition: all 0.3s ease;
+}
+
+.conversation-item:hover .conversation-fleche {
+    color: #3b82f6;
+    transform: translateX(3px);
+}
+
+/* ============================================ */
+/* 3. PAGE CONVERSATION                         */
+/* ============================================ */
+.conversation-container {
+    max-width: 800px;
+}
+
+/* En-tête conversation */
+.conversation-entete {
+    background: #ffffff;
+    border: 1px solid #e2e8f0;
+    border-radius: 20px;
+    padding: 22px 28px;
+    margin-bottom: 20px;
+    box-shadow: 0 1px 3px rgba(0,0,0,0.04);
+}
+
+.conversation-entete-gauche {
+    display: flex;
+    flex-direction: column;
+    gap: 6px;
+}
+
+.conversation-infos-entete h2 {
+    font-size: 20px;
+    font-weight: 700;
+    color: #0f172a;
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    margin-bottom: 4px;
+}
+
+.conversation-infos-entete h2 i {
+    color: #3b82f6;
+}
+
+.conversation-infos-entete p {
+    font-size: 13.5px;
+    color: #64748b;
+    margin: 0;
+    display: flex;
+    align-items: center;
+    gap: 6px;
+    flex-wrap: wrap;
+}
+
+.conversation-infos-entete p i {
+    font-size: 11px;
+    color: #94a3b8;
+}
+
+.separateur {
+    color: #cbd5e1;
+    margin: 0 2px;
+}
+
+/* ============================================ */
+/* 4. FIL DE DISCUSSION                         */
+/* ============================================ */
+.fil-discussion {
+    background: #ffffff;
+    border: 1px solid #e2e8f0;
+    border-radius: 20px;
+    padding: 24px;
+    margin-bottom: 20px;
+    max-height: 500px;
+    overflow-y: auto;
+    display: flex;
+    flex-direction: column;
+    gap: 16px;
+    box-shadow: 0 1px 3px rgba(0,0,0,0.04);
+}
+
+/* Scrollbar stylisée */
+.fil-discussion::-webkit-scrollbar {
+    width: 6px;
+}
+
+.fil-discussion::-webkit-scrollbar-track {
+    background: transparent;
+}
+
+.fil-discussion::-webkit-scrollbar-thumb {
+    background: #cbd5e1;
+    border-radius: 3px;
+}
+
+.fil-discussion::-webkit-scrollbar-thumb:hover {
+    background: #94a3b8;
+}
+
+/* Séparateur de date */
+.separateur-date {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin: 8px 0;
+}
+
+.separateur-date span {
+    background: #f1f5f9;
+    color: #64748b;
+    font-size: 12px;
+    font-weight: 500;
+    padding: 5px 16px;
+    border-radius: 20px;
+}
+
+/* ============================================ */
+/* 5. BULLES DE MESSAGE                         */
+/* ============================================ */
+.bulle-message {
+    display: flex;
+    gap: 10px;
+    max-width: 75%;
+    animation: messageApparition 0.3s ease;
+}
+
+.bulle-envoyee {
+    align-self: flex-end;
+    flex-direction: row-reverse;
+}
+
+.bulle-recue {
+    align-self: flex-start;
+}
+
+/* Avatar bulle */
+.bulle-avatar {
+    flex-shrink: 0;
+    align-self: flex-end;
+}
+
+.avatar-initiales-petit {
+    width: 32px;
+    height: 32px;
+    border-radius: 50%;
+    background: linear-gradient(135deg, #64748b, #475569);
+    color: #ffffff;
+    font-size: 12px;
+    font-weight: 700;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.bulle-envoyee .avatar-initiales-petit {
+    background: linear-gradient(135deg, #3b82f6, #2563eb);
+}
+
+/* Corps bulle */
+.bulle-corps {
+    display: flex;
+    flex-direction: column;
+    gap: 4px;
+}
+
+.bulle-haut {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+}
+
+.bulle-envoyee .bulle-haut {
+    flex-direction: row-reverse;
+}
+
+.bulle-nom {
+    font-size: 12px;
+    font-weight: 600;
+    color: #64748b;
+}
+
+.bulle-heure {
+    font-size: 11px;
+    color: #94a3b8;
+}
+
+.bulle-texte {
+    padding: 12px 16px;
+    border-radius: 16px;
+    font-size: 14px;
+    line-height: 1.6;
+    color: #1e293b;
+}
+
+.bulle-envoyee .bulle-texte {
+    background: linear-gradient(135deg, #3b82f6, #2563eb);
+    color: #ffffff;
+    border-bottom-right-radius: 4px;
+}
+
+.bulle-recue .bulle-texte {
+    background: #f1f5f9;
+    color: #334155;
+    border-bottom-left-radius: 4px;
+}
+
+/* ============================================ */
+/* 6. FORMULAIRE D'ENVOI                        */
+/* ============================================ */
+.formulaire-envoi {
+    background: #ffffff;
+    border: 1px solid #e2e8f0;
+    border-radius: 20px;
+    padding: 18px 22px;
+    box-shadow: 0 1px 3px rgba(0,0,0,0.04);
+}
+
+.envoi-container {
+    display: flex;
+    align-items: flex-end;
+    gap: 12px;
+}
+
+.envoi-container textarea {
+    flex: 1;
+    padding: 14px 18px;
+    border: 2px solid #e2e8f0;
+    border-radius: 14px;
+    font-size: 14px;
+    font-family: 'Poppins', 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    color: #334155;
+    background: #f8fafc;
+    resize: none;
+    outline: none;
+    transition: all 0.3s ease;
+    min-height: 50px;
+    max-height: 120px;
+}
+
+.envoi-container textarea:focus {
+    border-color: #3b82f6;
+    background: #ffffff;
+    box-shadow: 0 0 0 4px rgba(59,130,246,0.08);
+}
+
+.envoi-container textarea::placeholder {
+    color: #b0bec5;
+}
+
+.bouton-envoi {
+    width: 50px;
+    height: 50px;
+    border-radius: 14px;
+    background: linear-gradient(135deg, #3b82f6, #2563eb);
+    color: #ffffff;
+    border: none;
+    cursor: pointer;
+    font-size: 18px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    transition: all 0.3s ease;
+    box-shadow: 0 4px 12px rgba(37,99,235,0.25);
+    flex-shrink: 0;
+}
+
+.bouton-envoi:hover {
+    transform: translateY(-1px);
+    box-shadow: 0 6px 16px rgba(37,99,235,0.35);
+}
+
+.bouton-envoi:active {
+    transform: translateY(0);
+    box-shadow: 0 2px 8px rgba(37,99,235,0.2);
+}
+
+.bouton-envoi i {
+    transition: transform 0.3s ease;
+}
+
+.bouton-envoi:hover i {
+    transform: translateX(1px) translateY(-1px);
+}
+
+/* ============================================ */
+/* 7. ÉTAT VIDE                                 */
+/* ============================================ */
+.etat-vide-messages {
+    background: #ffffff;
+    border: 2px dashed #e2e8f0;
+    border-radius: 20px;
+    padding: 60px 40px;
+    text-align: center;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 16px;
+}
+
+.etat-vide-messages .vide-illustration {
+    width: 100px;
+    height: 100px;
+    border-radius: 50%;
+    background: #f1f5f9;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-bottom: 8px;
+}
+
+.etat-vide-messages .vide-illustration i {
+    font-size: 44px;
+    color: #94a3b8;
+}
+
+.etat-vide-messages h2 {
+    font-size: 22px;
+    font-weight: 700;
+    color: #0f172a;
+    margin: 0;
+}
+
+.etat-vide-messages p {
+    font-size: 15px;
+    color: #64748b;
+    max-width: 450px;
+    margin: 0;
+}
+
+.etat-vide-petit {
+    padding: 30px 20px;
+    border: 1px solid #e2e8f0;
+    border-radius: 12px;
+    text-align: center;
+}
+
+.etat-vide-petit i {
+    font-size: 36px;
+    color: #cbd5e1;
+    margin-bottom: 8px;
+}
+
+.etat-vide-petit p {
+    font-size: 14px;
+    color: #94a3b8;
+    margin: 0;
+}
+
+/* ============================================ */
+/* 8. MESSAGES (SUCCÈS & ERREUR)               */
+/* ============================================ */
+.message-succes {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    background: #f0fdf4;
+    border: 1px solid #bbf7d0;
+    border-left: 4px solid #10b981;
+    color: #065f46;
+    padding: 14px 18px;
+    border-radius: 12px;
+    font-size: 14px;
+    font-weight: 500;
+    margin-bottom: 20px;
+    animation: slideDown 0.3s ease;
+}
+
+.message-succes i {
+    font-size: 18px;
+    color: #10b981;
+    flex-shrink: 0;
+}
+
+.message-erreur {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    background: #fef2f2;
+    border: 1px solid #fecaca;
+    border-left: 4px solid #ef4444;
+    color: #991b1b;
+    padding: 14px 18px;
+    border-radius: 12px;
+    font-size: 14px;
+    font-weight: 500;
+    margin-bottom: 20px;
+    animation: slideDown 0.3s ease;
+}
+
+.message-erreur i {
+    font-size: 18px;
+    color: #ef4444;
+    flex-shrink: 0;
+}
+
+/* ============================================ */
+/* 9. ANIMATIONS                                */
+/* ============================================ */
+@keyframes slideDown {
+    from { opacity: 0; transform: translateY(-8px); }
+    to   { opacity: 1; transform: translateY(0); }
+}
+
+@keyframes messageApparition {
+    from { opacity: 0; transform: translateY(10px); }
+    to   { opacity: 1; transform: translateY(0); }
+}
+
+@keyframes pulse {
+    0%, 100% { opacity: 1; }
+    50% { opacity: 0.5; }
+}
+
+/* ============================================ */
+/* 10. RESPONSIVE DESIGN                        */
+/* ============================================ */
+@media (max-width: 800px) {
+    .bulle-message {
+        max-width: 90%;
+    }
+
+    .fil-discussion {
+        padding: 16px;
+        max-height: 400px;
+    }
+
+    .conversation-entete {
+        padding: 16px 20px;
+    }
+
+    .conversation-container {
+        padding: 0 16px;
+    }
+}
+
+@media (max-width: 500px) {
+    .conversation-item {
+        padding: 14px 16px;
+        gap: 12px;
+    }
+
+    .avatar-initiales-message {
+        width: 40px;
+        height: 40px;
+        font-size: 14px;
+    }
+
+    .conversation-nom {
+        font-size: 14px;
+    }
+
+    .conversation-apercu {
+        font-size: 12.5px;
+    }
+
+    .bulle-message {
+        max-width: 95%;
+    }
+
+    .bulle-texte {
+        padding: 10px 14px;
+        font-size: 13px;
+    }
+
+    .envoi-container {
+        gap: 8px;
+    }
+
+    .envoi-container textarea {
+        padding: 12px 14px;
+        font-size: 13px;
+    }
+
+    .bouton-envoi {
+        width: 44px;
+        height: 44px;
+        font-size: 16px;
+    }
+
+    .separateur-date span {
+        font-size: 11px;
+        padding: 4px 12px;
+    }
+}
